@@ -36,7 +36,7 @@
   --popover: oklch(0.14 0.03 265);
   --popover-foreground: var(--foreground);
   --primary: oklch(0.68 0.22 275);
-  --primary-foreground: oklch(0.985 0 0);
+  --primary-foreground: oklch(0.11 0.03 265);
   --secondary: oklch(0.2 0.035 265);
   --secondary-foreground: oklch(0.94 0.008 265);
   --muted: oklch(0.18 0.028 265);
@@ -223,7 +223,7 @@ body {
 }
 
 .reveal--eager {
-  animation-duration: 450ms;
+  animation: none;
 }
 
 .scroll-progress {
