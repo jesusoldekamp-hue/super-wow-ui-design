@@ -2,8 +2,11 @@
 
 Carga escenas 3D mediante `next/dynamic` y `ssr: false` únicamente en la sección que las muestra.
 
-```bash
-pnpm add three @react-three/fiber @react-three/drei
+```tsx
+const AmbientOrb = dynamic(
+  () => import("@workspace/effects/ambient-orb").then((module) => module.AmbientOrb),
+  { ssr: false },
+)
 ```
 
-Ofrece una imagen o composición CSS equivalente para dispositivos modestos, ahorro de datos y reducción de movimiento.
+`AmbientOrb` limita DPR, soporta movimiento reducido y ofrece fallback. Para escenas nuevas conserva una composición CSS equivalente para dispositivos modestos y ahorro de datos.

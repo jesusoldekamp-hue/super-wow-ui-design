@@ -1,10 +1,11 @@
-import { ArrowRight, BarChart3, BriefcaseBusiness, PanelsTopLeft } from "lucide-react"
+import { ArrowRight, BarChart3, BriefcaseBusiness, Orbit, PanelsTopLeft } from "lucide-react"
 import Link from "next/link"
 
 const templates = [
   { slug: "landing", name: "Landing", text: "Marketing moderna con secciones esenciales.", icon: PanelsTopLeft },
   { slug: "dashboard", name: "Dashboard", text: "Panel de control completo y responsivo.", icon: BarChart3 },
   { slug: "portfolio", name: "Portfolio", text: "Portafolio personal minimalista y elegante.", icon: BriefcaseBusiness },
+  { slug: "cinematic", name: "Cinematic", text: "Storytelling premium con scroll, SVG y WebGL.", icon: Orbit },
 ]
 
 export function TemplatePreview() {

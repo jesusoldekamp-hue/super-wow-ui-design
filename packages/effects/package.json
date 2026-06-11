@@ -1,0 +1,39 @@
+{
+  "name": "@workspace/effects",
+  "version": "0.0.0",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "lint": "eslint",
+    "format": "prettier --write \"**/*.{ts,tsx}\"",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@gsap/react": "2.1.2",
+    "@react-three/drei": "10.7.7",
+    "@react-three/fiber": "9.6.1",
+    "gsap": "3.15.0",
+    "lenis": "1.3.23",
+    "motion": "^12.40.0",
+    "react": "19.2.7",
+    "react-dom": "19.2.7",
+    "three": "0.182.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "@types/three": "^0.182.0",
+    "@workspace/eslint-config": "workspace:*",
+    "@workspace/typescript-config": "workspace:*",
+    "eslint": "^9",
+    "typescript": "^5"
+  },
+  "exports": {
+    "./ambient-orb": "./src/ambient-orb.tsx",
+    "./lenis-provider": "./src/lenis-provider.tsx",
+    "./morphing-symbol": "./src/morphing-symbol.tsx",
+    "./scroll-story": "./src/scroll-story.tsx",
+    "./split-text-reveal": "./src/split-text-reveal.tsx",
+    "./view-transition-link": "./src/view-transition-link.tsx"
+  }
+}

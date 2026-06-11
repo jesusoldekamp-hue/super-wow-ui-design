@@ -5,6 +5,7 @@ import {
   FolderKanban,
   Mail,
   Menu,
+  Orbit,
   Settings,
   Users,
 } from "lucide-react"
@@ -20,7 +21,9 @@ import { Input } from "@workspace/ui/components/input"
 import { Switch } from "@workspace/ui/components/switch"
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@workspace/ui/components/table"
 
-const slugs = ["landing", "dashboard", "portfolio"] as const
+import { CinematicDemo } from "@/components/cinematic-demo"
+
+const slugs = ["landing", "dashboard", "portfolio", "cinematic"] as const
 type TemplateSlug = (typeof slugs)[number]
 
 export function generateStaticParams() {
@@ -123,12 +126,20 @@ export default async function TemplatePage({ params }: { params: Promise<{ slug:
   const slug = (await params).slug as TemplateSlug
   if (!slugs.includes(slug)) notFound()
 
-  const demos = { landing: <LandingDemo />, dashboard: <DashboardDemo />, portfolio: <PortfolioDemo /> }
+  const demos = {
+    landing: <LandingDemo />,
+    dashboard: <DashboardDemo />,
+    portfolio: <PortfolioDemo />,
+    cinematic: <CinematicDemo />,
+  }
 
   return (
     <main className="mx-auto max-w-[1500px] px-4 py-8 lg:px-8">
       <div className="mb-6 flex flex-wrap items-center justify-between gap-4">
-        <div><Badge variant="outline">Demo reutilizable</Badge><h1 className="mt-2 text-3xl font-semibold capitalize">{slug}</h1></div>
+        <div>
+          <Badge variant="outline">{slug === "cinematic" ? <Orbit data-icon="inline-start" /> : null} Demo reutilizable</Badge>
+          <h1 className="mt-2 text-3xl font-semibold capitalize">{slug}</h1>
+        </div>
         <Button asChild variant="outline"><Link href="/plantillas">Ver plantillas</Link></Button>
       </div>
       {demos[slug]}

@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "build": "turbo build",
+    "doctor": "node scripts/doctor.mjs",
     "dev": "turbo dev",
     "lint": "turbo lint",
     "format": "turbo format",
@@ -13,7 +14,8 @@
     "catalog:validate": "corepack pnpm --filter web catalog:validate",
     "readme:generate": "corepack pnpm --filter web readme:generate",
     "registry:generate": "corepack pnpm --filter web registry:generate",
-    "check": "corepack pnpm catalog:validate && corepack pnpm registry:generate && corepack pnpm lint && corepack pnpm typecheck && corepack pnpm test && corepack pnpm build"
+    "check": "corepack pnpm catalog:validate && corepack pnpm registry:generate && corepack pnpm lint && corepack pnpm typecheck && corepack pnpm test && corepack pnpm build",
+    "ready": "corepack pnpm doctor && corepack pnpm check && corepack pnpm test:e2e"
   },
   "devDependencies": {
     "@workspace/eslint-config": "workspace:*",

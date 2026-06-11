@@ -19,6 +19,7 @@
   "dependencies": {
     "@vercel/analytics": "^2.0.1",
     "@vercel/speed-insights": "^2.0.0",
+    "@workspace/effects": "workspace:*",
     "@workspace/ui": "workspace:*",
     "lucide-react": "^1.17.0",
     "motion": "^12.40.0",

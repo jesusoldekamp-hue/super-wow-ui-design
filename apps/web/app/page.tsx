@@ -3,6 +3,7 @@ import Link from "next/link"
 import { Suspense } from "react"
 
 import { Button } from "@workspace/ui/components/button"
+import { LiquidGlass } from "@workspace/ui/components/liquid-glass"
 
 import { CatalogExplorer } from "@/components/catalog-explorer"
 import { Reveal } from "@/components/reveal"
@@ -34,20 +35,20 @@ export default function Page() {
                 </a>
               </Button>
             </div>
-            <div className="glass mt-8 max-w-xl rounded-xl p-4 font-mono text-sm">
+            <LiquidGlass className="mt-8 max-w-xl rounded-2xl p-4 font-mono text-sm">
               <div className="mb-3 flex items-center justify-between text-xs text-muted-foreground">
                 <span>Instalar un bloque</span>
                 <Copy className="size-3.5" />
               </div>
               <code><span className="text-primary">pnpm dlx shadcn@latest add</span> https://awesome-modern-ui.vercel.app/r/hero-modern.json</code>
-            </div>
+            </LiquidGlass>
             <p className="mt-4 flex items-center gap-2 text-sm text-muted-foreground">
               <Check className="size-4 text-primary" /> Next.js, React, Tailwind CSS y TypeScript.
             </p>
           </Reveal>
           <Reveal eager className="grid gap-3 sm:grid-cols-[1.25fr_0.9fr]" delay={0.1}>
             <TemplatePreview />
-            <div className="glass rounded-2xl p-4">
+            <LiquidGlass className="rounded-2xl p-4">
               <h2 className="font-semibold">Recursos curados</h2>
               <p className="mb-3 text-sm text-muted-foreground">Solo lo mejor del ecosistema.</p>
               <div className="flex flex-col gap-2">
@@ -58,7 +59,7 @@ export default function Page() {
                   </Link>
                 ))}
               </div>
-            </div>
+            </LiquidGlass>
           </Reveal>
         </div>
       </section>
