@@ -1,0 +1,32 @@
+name: Proponer recurso
+description: Sugiere una herramienta que mejore la selección actual.
+title: "[Recurso]: "
+labels: ["resource"]
+body:
+  - type: input
+    id: name
+    attributes:
+      label: Nombre y URL oficial
+    validations:
+      required: true
+  - type: textarea
+    id: reason
+    attributes:
+      label: Qué resuelve y por qué debe entrar
+    validations:
+      required: true
+  - type: input
+    id: license
+    attributes:
+      label: Licencia y precio
+    validations:
+      required: true
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Verificación
+      options:
+        - label: Está mantenido y tiene documentación oficial.
+          required: true
+        - label: No duplica claramente un recurso existente.
+          required: true

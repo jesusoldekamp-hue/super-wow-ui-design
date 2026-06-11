@@ -1,0 +1,31 @@
+{
+  "name": "awesome-modern-ui",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "turbo build",
+    "dev": "turbo dev",
+    "lint": "turbo lint",
+    "format": "turbo format",
+    "typecheck": "turbo typecheck",
+    "test": "turbo test",
+    "test:e2e": "corepack pnpm --filter web test:e2e",
+    "catalog:validate": "corepack pnpm --filter web catalog:validate",
+    "readme:generate": "corepack pnpm --filter web readme:generate",
+    "registry:generate": "corepack pnpm --filter web registry:generate",
+    "check": "corepack pnpm catalog:validate && corepack pnpm registry:generate && corepack pnpm lint && corepack pnpm typecheck && corepack pnpm test && corepack pnpm build"
+  },
+  "devDependencies": {
+    "@workspace/eslint-config": "workspace:*",
+    "@workspace/typescript-config": "workspace:*",
+    "next": "16.2.9",
+    "prettier": "^3.8.3",
+    "prettier-plugin-tailwindcss": "^0.8.0",
+    "turbo": "^2.9.15",
+    "typescript": "^5"
+  },
+  "packageManager": "pnpm@10.33.4",
+  "engines": {
+    "node": ">=20"
+  }
+}

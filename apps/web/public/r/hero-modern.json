@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hero-modern",
+  "type": "registry:block",
+  "title": "Hero Modern",
+  "description": "Hero moderno con acciones y preview.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "components/amui/hero-modern.tsx",
+      "type": "registry:component",
+      "content": "import { ArrowRight } from \"lucide-react\"\nimport type { ReactNode } from \"react\"\n\nimport { Button } from \"@/components/ui/button\"\nimport { cn } from \"@/lib/utils\"\n\nexport function HeroModern({\n  title,\n  description,\n  primaryAction,\n  secondaryAction,\n  preview,\n  className,\n}: {\n  title: string\n  description: string\n  primaryAction: ReactNode\n  secondaryAction?: ReactNode\n  preview?: ReactNode\n  className?: string\n}) {\n  return (\n    <section className={cn(\"grid items-center gap-10 py-20 lg:grid-cols-2\", className)}>\n      <div>\n        <h1 className=\"text-5xl font-semibold tracking-[-0.05em] sm:text-6xl\">{title}</h1>\n        <p className=\"mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground\">{description}</p>\n        <div className=\"mt-8 flex flex-wrap gap-3\">\n          <Button asChild size=\"lg\">{primaryAction}</Button>\n          {secondaryAction ? <Button asChild variant=\"outline\" size=\"lg\">{secondaryAction}</Button> : null}\n        </div>\n      </div>\n      <div className=\"glass relative min-h-80 overflow-hidden rounded-2xl p-6\">\n        {preview ?? (\n          <div className=\"grid h-full min-h-64 place-items-center\">\n            <ArrowRight className=\"size-10 text-primary\" />\n          </div>\n        )}\n      </div>\n    </section>\n  )\n}\n"
+    }
+  ]
+}
