@@ -1,17 +1,17 @@
 import { ArrowRight, Check, Code2, Copy, Sparkles } from "lucide-react"
 import Link from "next/link"
-import { Suspense } from "react"
 
 import { Button } from "@workspace/ui/components/button"
 import { LiquidGlass } from "@workspace/ui/components/liquid-glass"
 
-import { CatalogExplorer } from "@/components/catalog-explorer"
+import { ResourceCard } from "@/components/resource-card"
 import { Reveal } from "@/components/reveal"
 import { TemplatePreview } from "@/components/template-preview"
 import { resources } from "@/lib/catalog"
 
 export default function Page() {
   const featured = resources.filter((item) => item.featured).slice(0, 5)
+  const highlighted = resources.filter((item) => item.featured).slice(0, 8)
 
   return (
     <main>
@@ -66,9 +66,16 @@ export default function Page() {
 
       <section className="mx-auto max-w-7xl px-5 py-14 lg:px-8">
         <Reveal>
-          <Suspense fallback={<div className="glass h-96 rounded-2xl" />}>
-            <CatalogExplorer compact />
-          </Suspense>
+          <div className="mb-6 max-w-2xl">
+            <p className="text-sm font-medium text-primary">Selección estricta</p>
+            <h2 className="mt-2 text-3xl font-semibold tracking-tight">Recursos destacados</h2>
+            <p className="mt-2 text-muted-foreground">
+              Herramientas mantenidas, útiles y con una razón clara para estar en el stack.
+            </p>
+          </div>
+          <div className="grid gap-3 md:grid-cols-2 lg:grid-cols-4">
+            {highlighted.map((item) => <ResourceCard key={item.slug} item={item} />)}
+          </div>
           <div className="mt-5 text-center">
             <Button asChild variant="outline"><Link href="/recursos">Ver los 40 recursos <ArrowRight data-icon="inline-end" /></Link></Button>
           </div>

@@ -5,7 +5,6 @@ import { SpeedInsights } from "@vercel/speed-insights/next"
 
 import "@workspace/ui/globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
-import { MotionProvider } from "@/components/motion-provider"
 import { SiteFooter } from "@/components/site-footer"
 import { SiteHeader } from "@/components/site-header"
 
@@ -59,14 +58,12 @@ export default function RootLayout({
     >
       <body className="font-sans antialiased">
         <ThemeProvider>
-          <MotionProvider>
-            <div className="scroll-progress fixed inset-x-0 top-0 z-50 h-0.5 bg-primary" />
-            <SiteHeader />
-            {children}
-            <SiteFooter />
-            <Analytics />
-            <SpeedInsights />
-          </MotionProvider>
+          <div className="scroll-progress fixed inset-x-0 top-0 z-50 h-0.5 bg-primary" />
+          <SiteHeader />
+          {children}
+          <SiteFooter />
+          <Analytics />
+          <SpeedInsights />
         </ThemeProvider>
       </body>
     </html>

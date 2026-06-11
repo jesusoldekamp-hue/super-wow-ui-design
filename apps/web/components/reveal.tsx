@@ -1,7 +1,10 @@
-"use client"
+import type { CSSProperties, ReactNode } from "react"
 
-import { motion } from "motion/react"
-import type { ReactNode } from "react"
+import { cn } from "@workspace/ui/lib/utils"
+
+type RevealStyle = CSSProperties & {
+  "--reveal-delay": string
+}
 
 export function Reveal({
   children,
@@ -15,14 +18,11 @@ export function Reveal({
   eager?: boolean
 }) {
   return (
-    <motion.div
-      className={className}
-      initial={eager ? false : { opacity: 0, y: 20 }}
-      whileInView={eager ? undefined : { opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-80px" }}
-      transition={{ duration: 0.55, delay, ease: [0.22, 1, 0.36, 1] }}
+    <div
+      className={cn("reveal", eager && "reveal--eager", className)}
+      style={{ "--reveal-delay": `${delay}s` } as RevealStyle}
     >
       {children}
-    </motion.div>
+    </div>
   )
 }
