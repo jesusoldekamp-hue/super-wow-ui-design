@@ -10,6 +10,28 @@ test("navega por la experiencia principal", async ({ page }) => {
   await expect(page.getByRole("link", { name: "Motion" }).first()).toBeVisible()
 })
 
+test("el marco del navbar refleja el progreso de scroll", async ({ page }) => {
+  await page.goto("/")
+  const progress = page.getByTestId("nav-scroll-progress")
+
+  const initialOffset = await progress.evaluate((element) =>
+    Number.parseFloat(getComputedStyle(element).strokeDashoffset),
+  )
+
+  await page.evaluate(() => {
+    document.documentElement.style.scrollBehavior = "auto"
+    window.scrollTo(0, document.documentElement.scrollHeight)
+  })
+
+  await expect
+    .poll(() =>
+      progress.evaluate((element) =>
+        Number.parseFloat(getComputedStyle(element).strokeDashoffset),
+      ),
+    )
+    .toBeLessThan(initialOffset)
+})
+
 test("abre las cuatro plantillas", async ({ page }) => {
   for (const slug of ["landing", "dashboard", "portfolio", "cinematic"]) {
     await page.goto(`/plantillas/${slug}`)
