@@ -22,7 +22,7 @@ export default function ResourcesPage() {
           una explicación clara de para qué sirve y por qué merece estar aquí.
         </p>
       </div>
-      <Suspense fallback={<div className="glass h-96 animate-pulse rounded-2xl" />}>
+      <Suspense fallback={<div className="liquid-card h-96 animate-pulse rounded-2xl" />}>
         <CatalogExplorer />
       </Suspense>
     </main>

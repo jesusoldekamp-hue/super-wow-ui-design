@@ -3,8 +3,8 @@ import Link from "next/link"
 
 export function SiteFooter() {
   return (
-    <footer className="border-t">
-      <div className="mx-auto flex max-w-7xl flex-col gap-5 px-5 py-10 text-sm text-muted-foreground sm:flex-row sm:items-center sm:justify-between lg:px-8">
+    <footer className="border-t px-3 py-4 sm:px-4">
+      <div className="liquid-rail mx-auto flex max-w-7xl flex-col gap-5 rounded-2xl px-5 py-6 text-sm text-muted-foreground sm:flex-row sm:items-center sm:justify-between lg:px-8">
         <div>
           <p className="font-medium text-foreground">Awesome Modern UI</p>
           <p>Recursos visuales para diseñar mejores webs y apps.</p>

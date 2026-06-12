@@ -17,7 +17,7 @@ const AmbientOrb = dynamic(
     loading: () => (
       <div
         aria-hidden="true"
-        className="h-full w-full rounded-full bg-violet-500/15 blur-3xl"
+        className="absolute inset-0 rounded-full bg-violet-500/15 blur-3xl"
         data-testid="ambient-orb"
       />
     ),

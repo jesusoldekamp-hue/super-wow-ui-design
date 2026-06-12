@@ -1,10 +1,10 @@
 import { ArrowRight, Code2, Layers3, Palette, Sparkles } from "lucide-react"
-import Image from "next/image"
 import Link from "next/link"
 
 import { Button } from "@workspace/ui/components/button"
 import { LiquidGlass } from "@workspace/ui/components/liquid-glass"
 
+import { LiquidResourceStage } from "@/components/liquid-resource-stage"
 import { ResourceCard } from "@/components/resource-card"
 import { Reveal } from "@/components/reveal"
 import { TemplatePreview } from "@/components/template-preview"
@@ -63,39 +63,7 @@ export default function Page() {
           </Reveal>
 
           <Reveal eager delay={0.1} className="relative">
-            <LiquidGlass
-              className="rounded-[2rem] p-3 sm:p-4"
-              contentClassName="grid gap-3 sm:grid-cols-2"
-              style={{ "--glass-x": "16%", "--glass-y": "4%" }}
-            >
-              {heroResources.map((item, index) => (
-                <Link
-                  key={item.slug}
-                  href={`/recursos/${item.slug}`}
-                  className={`group liquid-card relative overflow-hidden rounded-2xl ${
-                    index === 0 ? "sm:col-span-2" : ""
-                  }`}
-                >
-                  <div className={`relative ${index === 0 ? "aspect-[16/7]" : "aspect-[16/10]"}`}>
-                    <Image
-                      src={item.image}
-                      alt={item.imageAlt}
-                      fill
-                      priority
-                      sizes="(min-width: 1024px) 55vw, 100vw"
-                      className="object-cover transition-transform duration-500 group-hover:scale-[1.025]"
-                    />
-                    <span className="absolute inset-0 bg-gradient-to-t from-black/65 via-transparent to-white/10" />
-                  </div>
-                  <span className="absolute bottom-3 left-3 rounded-full border border-white/15 bg-black/55 px-3 py-1 text-xs font-medium text-white shadow-2xl backdrop-blur-xl">
-                    {item.name}
-                  </span>
-                  <span className="absolute right-3 top-3 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-[11px] font-medium text-white/80 backdrop-blur-xl">
-                    {categoryLabels[item.category]}
-                  </span>
-                </Link>
-              ))}
-            </LiquidGlass>
+            <LiquidResourceStage items={heroResources} />
           </Reveal>
         </div>
       </section>
