@@ -11,7 +11,7 @@ export function BentoFeatures({ items }: { items: BentoFeature[] }) {
   return (
     <section className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
       {items.map(({ title, description, icon: Icon, wide }) => (
-        <article key={title} className={`glass rounded-2xl p-6 ${wide ? "lg:col-span-2" : ""}`}>
+        <article key={title} className={`liquid-card rounded-2xl p-6 ${wide ? "lg:col-span-2" : ""}`}>
           <div className="mb-10 grid size-10 place-items-center rounded-xl bg-primary/12 text-primary">
             <Icon className="size-5" />
           </div>

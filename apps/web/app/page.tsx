@@ -3,6 +3,7 @@ import Image from "next/image"
 import Link from "next/link"
 
 import { Button } from "@workspace/ui/components/button"
+import { LiquidGlass } from "@workspace/ui/components/liquid-glass"
 
 import { ResourceCard } from "@/components/resource-card"
 import { Reveal } from "@/components/reveal"
@@ -15,20 +16,20 @@ export default function Page() {
   const highlighted = featured.slice(0, 8)
 
   return (
-    <main>
-      <section className="relative overflow-hidden border-b">
+    <main className="overflow-hidden">
+      <section className="liquid-hero-shell relative overflow-hidden border-b">
         <div className="grid-background pointer-events-none absolute inset-0 opacity-45" />
-        <div className="mx-auto grid max-w-7xl gap-12 px-5 py-16 lg:grid-cols-[0.92fr_1.08fr] lg:px-8 lg:py-24">
+        <span className="liquid-orb left-[7%] top-16 size-64" />
+        <span className="liquid-orb right-[9%] top-24 size-80 bg-[radial-gradient(circle,rgba(34,211,238,.28),transparent_62%)]" />
+        <span className="liquid-orb bottom-[-8rem] left-[42%] size-96 bg-[radial-gradient(circle,rgba(192,132,252,.18),transparent_65%)]" />
+        <div className="mx-auto grid max-w-7xl gap-12 px-5 py-16 lg:grid-cols-[0.9fr_1.1fr] lg:px-8 lg:py-24">
           <Reveal eager className="relative flex flex-col justify-center">
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-primary">
-              Recursos para diseño web y apps
-            </p>
-            <h1 className="mt-4 max-w-3xl text-5xl font-semibold tracking-[-0.06em] sm:text-6xl lg:text-7xl">
+            <h1 className="max-w-3xl text-5xl font-semibold tracking-[-0.065em] sm:text-6xl lg:text-7xl">
               Construye interfaces modernas con mejores herramientas.
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground">
               Una colección visual y curada de componentes, animación, 3D, rendimiento e
-              inspiración para crear páginas web y productos digitales.
+              inspiración para crear páginas web y productos digitales con estética actual.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Button asChild size="lg">
@@ -42,48 +43,71 @@ export default function Page() {
                 </Link>
               </Button>
             </div>
+            <div className="mt-8 grid max-w-xl grid-cols-2 gap-3 sm:grid-cols-4">
+              {[
+                [`${resources.length}`, "recursos"],
+                [`${categories.length}`, "categorías"],
+                ["4", "diseños"],
+                ["100%", "visual"],
+              ].map(([value, label]) => (
+                <div key={label} className="liquid-card rounded-2xl px-4 py-3">
+                  <p className="text-2xl font-semibold tracking-[-0.04em]">{value}</p>
+                  <p className="text-xs uppercase tracking-[0.16em] text-muted-foreground">{label}</p>
+                </div>
+              ))}
+            </div>
             <p className="mt-5 flex items-center gap-2 text-sm text-muted-foreground">
               <Sparkles className="size-4 text-primary" />
-              Selección breve, mantenida y sin alternativas repetidas.
+              Selección breve, mantenida, visual y sin alternativas repetidas.
             </p>
           </Reveal>
 
-          <Reveal eager delay={0.1} className="relative grid gap-3 sm:grid-cols-2">
-            {heroResources.map((item, index) => (
-              <Link
-                key={item.slug}
-                href={`/recursos/${item.slug}`}
-                className={`group relative overflow-hidden rounded-2xl border bg-muted shadow-2xl ${
-                  index === 0 ? "sm:col-span-2" : ""
-                }`}
-              >
-                <div className={`relative ${index === 0 ? "aspect-[16/7]" : "aspect-[16/10]"}`}>
-                  <Image
-                    src={item.image}
-                    alt={item.imageAlt}
-                    fill
-                    priority
-                    sizes="(min-width: 1024px) 55vw, 100vw"
-                    className="object-cover transition-transform duration-500 group-hover:scale-[1.02]"
-                  />
-                </div>
-                <span className="absolute bottom-3 left-3 rounded-full border border-white/15 bg-black/60 px-3 py-1 text-xs font-medium text-white backdrop-blur">
-                  {item.name}
-                </span>
-              </Link>
-            ))}
+          <Reveal eager delay={0.1} className="relative">
+            <LiquidGlass
+              className="rounded-[2rem] p-3 sm:p-4"
+              contentClassName="grid gap-3 sm:grid-cols-2"
+              style={{ "--glass-x": "16%", "--glass-y": "4%" }}
+            >
+              {heroResources.map((item, index) => (
+                <Link
+                  key={item.slug}
+                  href={`/recursos/${item.slug}`}
+                  className={`group liquid-card relative overflow-hidden rounded-2xl ${
+                    index === 0 ? "sm:col-span-2" : ""
+                  }`}
+                >
+                  <div className={`relative ${index === 0 ? "aspect-[16/7]" : "aspect-[16/10]"}`}>
+                    <Image
+                      src={item.image}
+                      alt={item.imageAlt}
+                      fill
+                      priority
+                      sizes="(min-width: 1024px) 55vw, 100vw"
+                      className="object-cover transition-transform duration-500 group-hover:scale-[1.025]"
+                    />
+                    <span className="absolute inset-0 bg-gradient-to-t from-black/65 via-transparent to-white/10" />
+                  </div>
+                  <span className="absolute bottom-3 left-3 rounded-full border border-white/15 bg-black/55 px-3 py-1 text-xs font-medium text-white shadow-2xl backdrop-blur-xl">
+                    {item.name}
+                  </span>
+                  <span className="absolute right-3 top-3 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-[11px] font-medium text-white/80 backdrop-blur-xl">
+                    {categoryLabels[item.category]}
+                  </span>
+                </Link>
+              ))}
+            </LiquidGlass>
           </Reveal>
         </div>
       </section>
 
-      <section className="border-b bg-muted/25">
+      <section className="relative border-b bg-transparent">
         <div className="mx-auto max-w-7xl px-5 py-8 lg:px-8">
-          <div className="flex gap-3 overflow-x-auto pb-1">
+          <div className="liquid-rail flex gap-3 overflow-x-auto rounded-full p-2">
             {categories.map((category) => (
               <Link
                 key={category}
                 href={`/recursos?category=${category}`}
-                className="whitespace-nowrap rounded-full border bg-background/70 px-4 py-2 text-sm transition-colors hover:border-primary/50 hover:text-primary"
+                className="relative z-10 whitespace-nowrap rounded-full border border-white/10 bg-background/45 px-4 py-2 text-sm transition-colors hover:border-primary/50 hover:text-primary"
               >
                 {categoryLabels[category]}
                 <span className="ml-2 text-muted-foreground">
@@ -119,7 +143,7 @@ export default function Page() {
         </Reveal>
       </section>
 
-      <section className="border-y bg-muted/20">
+      <section className="liquid-hero-shell border-y">
         <div className="mx-auto grid max-w-7xl gap-10 px-5 py-16 lg:grid-cols-[0.75fr_1.25fr] lg:px-8">
           <Reveal className="flex flex-col justify-center">
             <Layers3 className="size-9 text-primary" />
@@ -144,23 +168,29 @@ export default function Page() {
       </section>
 
       <section className="mx-auto max-w-7xl px-5 py-16 lg:px-8">
-        <Reveal className="glass flex flex-col items-start justify-between gap-7 rounded-3xl p-7 sm:flex-row sm:items-center sm:p-10">
-          <div className="max-w-2xl">
-            <p className="text-sm font-medium text-primary">Código y catálogo abiertos</p>
-            <h2 className="mt-2 text-3xl font-semibold tracking-tight">
-              Una colección para consultar, compartir y mejorar.
-            </h2>
-            <p className="mt-3 text-muted-foreground">
-              El repositorio contiene el catálogo, sus imágenes, ejemplos y criterios de
-              selección para construir mejores productos web.
-            </p>
-          </div>
-          <Button asChild variant="outline" size="lg">
-            <a href="https://github.com/jesusoldekamp-hue/awesome-modern-ui">
-              <Code2 data-icon="inline-start" />
-              Abrir GitHub
-            </a>
-          </Button>
+        <Reveal>
+          <LiquidGlass
+            className="rounded-[2rem] p-7 sm:p-10"
+            contentClassName="flex flex-col items-start justify-between gap-7 sm:flex-row sm:items-center"
+            style={{ "--glass-x": "8%", "--glass-y": "0%" }}
+          >
+            <div className="max-w-2xl">
+              <p className="text-sm font-medium text-primary">Código y catálogo abiertos</p>
+              <h2 className="mt-2 text-3xl font-semibold tracking-tight">
+                Una colección para consultar, compartir y mejorar.
+              </h2>
+              <p className="mt-3 text-muted-foreground">
+                El repositorio contiene el catálogo, sus imágenes, ejemplos y criterios de
+                selección para construir mejores productos web.
+              </p>
+            </div>
+            <Button asChild variant="outline" size="lg">
+              <a href="https://github.com/jesusoldekamp-hue/awesome-modern-ui">
+                <Code2 data-icon="inline-start" />
+                Abrir GitHub
+              </a>
+            </Button>
+          </LiquidGlass>
         </Reveal>
       </section>
     </main>

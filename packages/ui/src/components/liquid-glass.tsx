@@ -7,13 +7,18 @@ type LiquidGlassStyle = CSSProperties & {
   "--glass-y"?: string
 }
 
+type LiquidGlassProps = Omit<ComponentPropsWithoutRef<"div">, "style"> & {
+  contentClassName?: string
+  style?: LiquidGlassStyle
+}
+
 export function LiquidGlass({
   children,
   className,
   contentClassName,
   style,
   ...props
-}: ComponentPropsWithoutRef<"div"> & { contentClassName?: string }) {
+}: LiquidGlassProps) {
   return (
     <div
       className={cn("liquid-glass", className)}

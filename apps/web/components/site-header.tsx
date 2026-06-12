@@ -26,10 +26,10 @@ export function SiteHeader() {
       <div className="site-nav-shell relative isolate mx-auto flex h-16 max-w-7xl items-center justify-between overflow-hidden rounded-2xl px-5 lg:px-8">
         <SiteNavOutline />
         <Link href="/" className="flex items-center gap-3 font-semibold">
-          <span className="grid size-8 place-items-center rounded-lg bg-gradient-to-br from-blue-500 to-violet-600 text-sm text-white shadow-lg shadow-violet-500/20">
+          <span className="grid size-9 place-items-center rounded-xl border border-white/15 bg-gradient-to-br from-blue-500 via-violet-500 to-cyan-400 text-sm text-white shadow-lg shadow-violet-500/25">
             A
           </span>
-          <span>Awesome Modern UI</span>
+          <span className="tracking-[-0.02em]">Awesome Modern UI</span>
         </Link>
         <nav className="hidden items-center gap-7 text-sm text-muted-foreground md:flex">
           {links.map(([label, href]) => (

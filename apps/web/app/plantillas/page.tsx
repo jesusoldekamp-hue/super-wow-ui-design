@@ -3,6 +3,7 @@ import type { Metadata } from "next"
 import Link from "next/link"
 
 import { Button } from "@workspace/ui/components/button"
+import { LiquidGlass } from "@workspace/ui/components/liquid-glass"
 
 export const metadata: Metadata = {
   title: "Diseños",
@@ -18,20 +19,32 @@ const templates = [
 
 export default function TemplatesPage() {
   return (
-    <main className="mx-auto max-w-7xl px-5 py-14 lg:px-8">
-      <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">Galería de diseños</p>
-      <h1 className="mt-3 text-4xl font-semibold tracking-tight sm:text-5xl">Interfaces para web y aplicaciones</h1>
-      <p className="mt-4 max-w-2xl text-lg text-muted-foreground">Landings, dashboards y portfolios con dirección visual, movimiento, glass, scroll y composición responsive.</p>
+    <main className="relative mx-auto max-w-7xl px-5 py-14 lg:px-8">
+      <span className="liquid-orb -left-24 top-12 size-72" />
+      <span className="liquid-orb right-10 top-24 size-72 bg-[radial-gradient(circle,rgba(34,211,238,.2),transparent_62%)]" />
+      <h1 className="relative text-4xl font-semibold tracking-[-0.055em] sm:text-6xl">
+        Interfaces para web y aplicaciones
+      </h1>
+      <p className="relative mt-4 max-w-2xl text-lg text-muted-foreground">
+        Landings, dashboards y portfolios con dirección visual, movimiento, liquid glass, scroll y composición responsive.
+      </p>
       <div className="mt-10 grid gap-5 md:grid-cols-2">
         {templates.map(([slug, name, description, Icon]) => (
-          <article key={slug} className="glass flex min-h-96 flex-col rounded-2xl p-6">
-            <div className="grid flex-1 place-items-center rounded-xl border bg-gradient-to-br from-primary/15 to-transparent">
-              <Icon className="size-14 text-primary" />
+          <LiquidGlass
+            key={slug}
+            className="min-h-96 rounded-[1.75rem] p-6"
+            contentClassName="flex h-full flex-col"
+            style={{ "--glass-x": slug === "cinematic" ? "72%" : "18%", "--glass-y": "4%" }}
+          >
+            <div className="grid flex-1 place-items-center rounded-2xl border border-white/10 bg-gradient-to-br from-primary/18 via-violet-500/10 to-cyan-400/10 shadow-inner">
+              <Icon className="size-14 text-primary drop-shadow-[0_0_18px_rgba(139,92,246,0.45)]" />
             </div>
             <h2 className="mt-6 text-2xl font-medium">{name}</h2>
             <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{description}</p>
-            <Button asChild className="mt-6"><Link href={`/plantillas/${slug}`}>Abrir demo <ArrowRight data-icon="inline-end" /></Link></Button>
-          </article>
+            <Button asChild className="mt-6">
+              <Link href={`/plantillas/${slug}`}>Abrir demo <ArrowRight data-icon="inline-end" /></Link>
+            </Button>
+          </LiquidGlass>
         ))}
       </div>
     </main>

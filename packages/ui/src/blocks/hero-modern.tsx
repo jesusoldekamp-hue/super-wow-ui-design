@@ -2,6 +2,7 @@ import { ArrowRight } from "lucide-react"
 import type { ReactNode } from "react"
 
 import { Button } from "@workspace/ui/components/button"
+import { LiquidGlass } from "@workspace/ui/components/liquid-glass"
 import { cn } from "@workspace/ui/lib/utils"
 
 export function HeroModern({
@@ -29,13 +30,13 @@ export function HeroModern({
           {secondaryAction ? <Button asChild variant="outline" size="lg">{secondaryAction}</Button> : null}
         </div>
       </div>
-      <div className="glass relative min-h-80 overflow-hidden rounded-2xl p-6">
+      <LiquidGlass className="min-h-80 rounded-[1.75rem] p-6" style={{ "--glass-x": "18%", "--glass-y": "0%" }}>
         {preview ?? (
           <div className="grid h-full min-h-64 place-items-center">
             <ArrowRight className="size-10 text-primary" />
           </div>
         )}
-      </div>
+      </LiquidGlass>
     </section>
   )
 }

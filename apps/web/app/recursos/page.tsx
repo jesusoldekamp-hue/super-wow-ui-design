@@ -10,12 +10,11 @@ export const metadata: Metadata = {
 
 export default function ResourcesPage() {
   return (
-    <main className="mx-auto max-w-7xl px-5 py-14 lg:px-8">
-      <div className="mb-9 max-w-4xl">
-        <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">
-          Directorio visual
-        </p>
-        <h1 className="mt-3 text-4xl font-semibold tracking-[-0.045em] sm:text-6xl">
+    <main className="relative mx-auto max-w-7xl px-5 py-14 lg:px-8">
+      <span className="liquid-orb -left-20 top-10 size-72" />
+      <span className="liquid-orb right-0 top-28 size-64 bg-[radial-gradient(circle,rgba(34,211,238,.22),transparent_62%)]" />
+      <div className="relative mb-9 max-w-4xl">
+        <h1 className="text-4xl font-semibold tracking-[-0.055em] sm:text-6xl">
           Recursos para diseñar webs y apps modernas
         </h1>
         <p className="mt-4 text-lg text-muted-foreground">

@@ -6,6 +6,7 @@ import { useDeferredValue, useMemo, useState } from "react"
 
 import { Button } from "@workspace/ui/components/button"
 import { Input } from "@workspace/ui/components/input"
+import { LiquidGlass } from "@workspace/ui/components/liquid-glass"
 
 import {
   categories,
@@ -50,7 +51,10 @@ export function CatalogExplorer({ compact = false }: { compact?: boolean }) {
   const shown = compact ? filtered.slice(0, 8) : filtered
 
   return (
-    <section className="glass rounded-2xl p-4 sm:p-6">
+    <LiquidGlass
+      className="liquid-glass--deep rounded-[1.75rem] p-4 sm:p-6"
+      style={{ "--glass-x": "10%", "--glass-y": "0%" }}
+    >
       <div className="flex flex-col gap-4">
         <label className="relative block">
           <Search className="absolute left-3 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" />
@@ -61,7 +65,7 @@ export function CatalogExplorer({ compact = false }: { compact?: boolean }) {
               setQuery(value)
               setParam("q", value)
             }}
-            className="h-11 pl-10"
+            className="h-12 border-white/10 bg-background/45 pl-10 backdrop-blur-xl"
             placeholder="Buscar herramientas para diseño y desarrollo web..."
             aria-label="Buscar recursos"
           />
@@ -75,6 +79,7 @@ export function CatalogExplorer({ compact = false }: { compact?: boolean }) {
               key={item}
               variant={category === item ? "default" : "outline"}
               size="sm"
+              className={category === item ? "" : "bg-background/45"}
               onClick={() => setParam("category", item)}
             >
               {categoryLabels[item]}
@@ -88,7 +93,7 @@ export function CatalogExplorer({ compact = false }: { compact?: boolean }) {
               aria-label="Framework"
               value={framework}
               onChange={(event) => setParam("framework", event.target.value)}
-              className="h-9 rounded-lg border bg-background px-3 text-sm"
+              className="h-9 rounded-lg border bg-background/55 px-3 text-sm backdrop-blur-xl"
             >
               <option value="">Todos los frameworks</option>
               {Array.from(new Set(resources.flatMap((item) => item.frameworks))).sort().map((item) => (
@@ -99,7 +104,7 @@ export function CatalogExplorer({ compact = false }: { compact?: boolean }) {
               aria-label="Precio"
               value={pricing}
               onChange={(event) => setParam("pricing", event.target.value)}
-              className="h-9 rounded-lg border bg-background px-3 text-sm"
+              className="h-9 rounded-lg border bg-background/55 px-3 text-sm backdrop-blur-xl"
             >
               <option value="">Cualquier precio</option>
               <option value="gratis">Gratis</option>
@@ -134,6 +139,6 @@ export function CatalogExplorer({ compact = false }: { compact?: boolean }) {
           No encontramos recursos con esos filtros.
         </div>
       ) : null}
-    </section>
+    </LiquidGlass>
   )
 }

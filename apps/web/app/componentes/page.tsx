@@ -10,14 +10,16 @@ export const metadata: Metadata = { title: "Componentes" }
 
 export default function ComponentsPage() {
   return (
-    <main className="mx-auto max-w-7xl px-5 pb-20 lg:px-8">
+    <main className="relative mx-auto max-w-7xl px-5 pb-20 lg:px-8">
+      <span className="liquid-orb -left-24 top-16 size-72" />
+      <span className="liquid-orb right-4 top-36 size-64 bg-[radial-gradient(circle,rgba(34,211,238,.22),transparent_62%)]" />
       <HeroModern
         title="Bloques modernos. Código tuyo."
         description="Primitives accesibles y composiciones listas para adaptar. Sin caja negra, sin estilos imposibles de sobrescribir."
         primaryAction={<a href="/r/hero-modern.json">Instalar hero <ArrowRight data-icon="inline-end" /></a>}
         secondaryAction={<Link href="/plantillas">Ver diseños</Link>}
         preview={
-          <div className="flex min-h-64 flex-col justify-between rounded-xl border bg-background/60 p-6">
+          <div className="liquid-card flex min-h-64 flex-col justify-between rounded-2xl p-6">
             <div className="h-2 w-20 rounded-full bg-primary/70" />
             <div>
               <div className="h-8 w-4/5 rounded-lg bg-foreground/90" />

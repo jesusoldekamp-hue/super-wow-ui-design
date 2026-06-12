@@ -15,7 +15,7 @@ import type { Resource } from "@/lib/catalog"
 
 export function ResourceCard({ item }: { item: Resource }) {
   return (
-    <Card className="glass group gap-0 overflow-hidden py-0 transition-transform duration-300 hover:-translate-y-1">
+    <Card className="liquid-card group gap-0 overflow-hidden py-0 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10">
       <Link
         href={`/recursos/${item.slug}`}
         className="relative block aspect-[16/9] overflow-hidden border-b bg-muted"
@@ -28,6 +28,7 @@ export function ResourceCard({ item }: { item: Resource }) {
           sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
           className="object-cover transition-transform duration-500 group-hover:scale-[1.025]"
         />
+        <span className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-white/10 opacity-70" />
       </Link>
       <CardHeader>
         <CardTitle>

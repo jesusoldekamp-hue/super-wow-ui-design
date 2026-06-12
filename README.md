@@ -28,10 +28,10 @@
 
 | Curado | Visual | Moderno | Listo para usar |
 | --- | --- | --- | --- |
-| 41 recursos útiles, no una lista infinita. | Portadas SVG locales para navegar desde GitHub. | UI, motion, 3D, SEO, performance y accesibilidad. | Web desplegada, filtros, fichas y README generado. |
+| 41 recursos útiles, no una lista infinita. | Portadas SVG locales para navegar desde GitHub. | UI, motion, 3D, SEO, performance y accesibilidad. | Web con liquid glass, filtros, fichas y README generado. |
 
 <p align="center">
-  <code>Next.js 16</code> <code>React 19</code> <code>Tailwind CSS 4</code> <code>Motion</code> <code>shadcn/ui</code> <code>Radix UI</code> <code>Three.js</code> <code>GSAP</code>
+  <code>Next.js 16</code> <code>React 19</code> <code>Tailwind CSS 4</code> <code>Motion</code> <code>shadcn/ui</code> <code>Radix UI</code> <code>Three.js</code> <code>Liquid Glass</code>
 </p>
 
 ## Por qué existe
@@ -42,7 +42,7 @@ Este repo no intenta guardar todo. Guarda lo que sí vale la pena tener a mano c
 
 | Selección estricta | Galería visual | Datos tipados | Calidad continua |
 | --- | --- | --- | --- |
-| Entran recursos con valor real para diseño web y app. | Cada ficha tiene portada local y enlace oficial. | El catálogo vive en una sola fuente: `apps/web/lib/catalog.ts`. | CI valida catálogo, registry, lint, tipos, pruebas y build. |
+| Entran recursos con valor real para diseño web y app. | Cada ficha tiene portada local, enlace oficial y una interfaz liquid glass. | El catálogo vive en una sola fuente: `apps/web/lib/catalog.ts`. | CI valida catálogo, registry, lint, tipos, pruebas y build. |
 
 ## Explorar por categoría
 
