@@ -22,7 +22,7 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const slug = (await params).slug
-  return { title: `Plantilla ${slug}` }
+  return { title: `Diseño ${slug}` }
 }
 
 export default async function TemplatePage({ params }: { params: Promise<{ slug: string }> }) {
@@ -43,7 +43,7 @@ export default async function TemplatePage({ params }: { params: Promise<{ slug:
           <Badge variant="outline"><Orbit data-icon="inline-start" /> Experiencia cinematográfica</Badge>
           <h1 className="mt-2 text-3xl font-semibold capitalize">{slug}</h1>
         </div>
-        <Button asChild variant="outline"><Link href="/plantillas">Ver plantillas</Link></Button>
+        <Button asChild variant="outline"><Link href="/plantillas">Ver diseños</Link></Button>
       </div>
       {demos[slug]}
     </main>

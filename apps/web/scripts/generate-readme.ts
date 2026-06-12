@@ -3,108 +3,148 @@ import { resolve } from "node:path"
 
 import { categories, categoryLabels, resources } from "../lib/catalog"
 
+const repositoryUrl = "https://github.com/jesusoldekamp-hue/awesome-modern-ui"
+const websiteUrl = "https://awesome-modern-ui.vercel.app"
+
+const categoryIndex = categories
+  .map((category) => {
+    const count = resources.filter((item) => item.category === category).length
+    return `- [${categoryLabels[category]}](#${category}) · ${count}`
+  })
+  .join("\n")
+
+const featured = resources
+  .filter((item) => item.featured)
+  .slice(0, 8)
+  .map(
+    (item) =>
+      `<a href="${websiteUrl}/recursos/${item.slug}"><img src="./apps/web/public/resources/${item.slug}.svg" alt="${item.imageAlt}" width="390"></a>`
+  )
+
+const featuredGrid = Array.from({ length: Math.ceil(featured.length / 2) }, (_, index) => {
+  const left = featured[index * 2] ?? ""
+  const right = featured[index * 2 + 1] ?? ""
+  return `| ${left} | ${right} |`
+}).join("\n")
+
 const tables = categories
   .map((category) => {
     const rows = resources
       .filter((item) => item.category === category)
       .map(
         (item) =>
-          `| [${item.name}](${item.url}) | ${item.description} | ${item.license} | ${item.pricing} |`
+          `| <a href="${websiteUrl}/recursos/${item.slug}"><img src="./apps/web/public/resources/${item.slug}.svg" alt="${item.imageAlt}" width="180"></a> | **[${item.name}](${item.url})**<br>${item.description}<br><sub>${item.license} · ${item.pricing}</sub> |`
       )
       .join("\n")
-    return `## ${categoryLabels[category]}\n\n| Recurso | Qué resuelve | Licencia | Precio |\n| --- | --- | --- | --- |\n${rows}`
+
+    return `<a id="${category}"></a>
+
+## ${categoryLabels[category]}
+
+| Vista | Recurso |
+| --- | --- |
+${rows}`
   })
   .join("\n\n")
 
-const readme = `# Awesome Modern UI
+const readme = `<p align="center">
+  <a href="${websiteUrl}">
+    <img src="./docs/images/awesome-modern-ui-cover.svg" alt="Awesome Modern UI: recursos para diseñar webs y apps modernas" width="100%">
+  </a>
+</p>
 
-Starter operativo para que Claude Code, Codex y desarrolladores construyan interfaces web modernas con una base visual y técnica de producción.
+<h1 align="center">Awesome Modern UI</h1>
 
-[Sitio web](https://awesome-modern-ui.vercel.app) · [Componentes](https://awesome-modern-ui.vercel.app/componentes) · [Plantillas](https://awesome-modern-ui.vercel.app/plantillas) · [Guías](https://awesome-modern-ui.vercel.app/guias)
+<p align="center">
+  Directorio visual de herramientas para diseñar páginas web y aplicaciones modernas.
+</p>
 
-## Qué incluye
+<p align="center">
+  <a href="${websiteUrl}"><strong>Explorar la web</strong></a>
+  ·
+  <a href="${websiteUrl}/recursos">Ver recursos</a>
+  ·
+  <a href="${websiteUrl}/plantillas">Ver diseños</a>
+  ·
+  <a href="${websiteUrl}/componentes">Ver componentes</a>
+</p>
 
-- Next.js 16, React 19, TypeScript y Tailwind CSS 4.
-- Componentes basados en shadcn/ui y Radix UI.
-- Motion, GSAP, ScrollTrigger, SplitText, MorphSVG y Lenis instalados.
-- Three.js, React Three Fiber y Drei con carga dinámica.
-- Soporte automático para \`prefers-reduced-motion\`.
-- Plantillas para landing, dashboard, portfolio y experiencias cinematográficas.
-- Registry compatible con shadcn.
-- SEO, JSON-LD, sitemap, Vercel Analytics y Speed Insights.
-- Instrucciones nativas para Claude Code y Codex.
-- Seis Web Quality Skills de Addy Osmani para Lighthouse, Core Web Vitals, WCAG 2.2, SEO y buenas prácticas.
-- ${resources.length} recursos modernos, mantenidos y sin alternativas redundantes.
+<p align="center">
+  <img alt="${resources.length} recursos" src="https://img.shields.io/badge/recursos-${resources.length}-6d5dfc">
+  <img alt="${categories.length} categorías" src="https://img.shields.io/badge/categorías-${categories.length}-22d3ee">
+  <img alt="Licencia MIT" src="https://img.shields.io/badge/licencia-MIT-34d399">
+</p>
 
-## Inicio rápido
+## Qué encontrarás
+
+- Herramientas para UI, animación, 3D, accesibilidad, rendimiento y SEO.
+- Referencias visuales para landings, dashboards, portfolios y productos digitales.
+- Una ficha por recurso con descripción, recomendación, licencia, precio y sitio oficial.
+- Imágenes locales para que el catálogo también sea visual dentro de GitHub.
+- Una selección corta: solo recursos útiles para crear mejores webs y apps.
+
+## Explorar por categoría
+
+${categoryIndex}
+
+## Recursos destacados
+
+| | |
+| --- | --- |
+${featuredGrid}
+
+${tables}
+
+## Diseños y componentes
+
+La web incluye ejemplos completos para ver cómo se combinan estas herramientas:
+
+- [Landing cinematográfica](${websiteUrl}/plantillas/landing)
+- [Dashboard moderno](${websiteUrl}/plantillas/dashboard)
+- [Portfolio editorial](${websiteUrl}/plantillas/portfolio)
+- [Experiencia inmersiva](${websiteUrl}/plantillas/cinematic)
+- [Bloques de interfaz](${websiteUrl}/componentes)
+
+## Ejecutar la web
 
 \`\`\`bash
 corepack pnpm install
 corepack pnpm dev
 \`\`\`
 
-Abre el repositorio con Claude Code o Codex y describe el sitio. Ambos agentes reciben reglas, mapa de herramientas y barra de calidad desde \`CLAUDE.md\`, \`AGENTS.md\`, \`.claude/\` y \`.codex/\`.
+Después abre \`http://localhost:3000\`.
 
-Ejemplo:
-
-\`\`\`text
-Usa este starter para crear una landing cinematográfica para un producto de audio.
-Necesito narrativa por scroll, comparación interactiva y una escena 3D ligera.
-Respeta reduced motion y conserva Lighthouse >= 90.
-\`\`\`
-
-Instalar un bloque en otro proyecto:
+## Actualizar el catálogo
 
 \`\`\`bash
-pnpm dlx shadcn@latest add https://awesome-modern-ui.vercel.app/r/hero-modern.json
+corepack pnpm resources:images
+corepack pnpm readme:generate
+corepack pnpm check
 \`\`\`
 
-Instalar el conocimiento para agentes o el pack avanzado desde GitHub:
+El catálogo, las portadas y este README se generan desde
+\`apps/web/lib/catalog.ts\`.
 
-\`\`\`bash
-pnpm dlx shadcn@latest add jesusoldekamp-hue/awesome-modern-ui/agent-workflow
-pnpm dlx shadcn@latest add jesusoldekamp-hue/awesome-modern-ui/web-quality-skills
-pnpm dlx shadcn@latest add jesusoldekamp-hue/awesome-modern-ui/advanced-effects
-\`\`\`
+## Contribuir
 
-${tables}
+Abre un issue o pull request en [${repositoryUrl}](${repositoryUrl}) con:
 
-## Capacidades avanzadas
-
-GSAP, ScrollTrigger, SplitText, MorphSVG, Lenis, Three.js y React Three Fiber ya están instalados en \`@workspace/effects\`. Se importan por módulo para no aumentar el bundle de rutas que no los usan. Consulta [docs/STACK.md](./docs/STACK.md) y la plantilla [cinematic](https://awesome-modern-ui.vercel.app/plantillas/cinematic).
-
-## Flujo para agentes
-
-- [Proceso de construcción](./docs/AI_WORKFLOW.md)
-- [Stack e imports](./docs/STACK.md)
-- [Barra de calidad](./docs/QUALITY_BAR.md)
-- [Plantilla de brief](./docs/BRIEF_TEMPLATE.md)
-- [Web Quality Skills](./docs/WEB_QUALITY_SKILLS.md)
-
-Las skills \`web-quality-audit\`, \`performance\`, \`core-web-vitals\`,
-\`accessibility\`, \`seo\` y \`best-practices\` ya están incluidas para Claude
-Code y Codex. Se actualizan desde el repositorio original con:
-
-\`\`\`bash
-corepack pnpm quality:skills:update
-\`\`\`
-
-## Calidad
-
-\`\`\`bash
-corepack pnpm doctor
-corepack pnpm ready
-\`\`\`
+- enlace oficial;
+- licencia y precio;
+- motivo concreto para recomendarlo;
+- evidencia de mantenimiento activo;
+- categoría adecuada y alternativas que reemplazaría.
 
 ## Créditos
 
-Proyecto original de [Jesus Sagaon](https://github.com/jesusoldekamp-hue). Inspirado por la recopilación pública [AndersonMoncayo/awesome-modern-ui](https://github.com/AndersonMoncayo/awesome-modern-ui); este repositorio contiene una implementación, estructura y código originales.
+Proyecto original de [Jesus Sagaon](https://github.com/jesusoldekamp-hue).
+Inspirado por la recopilación pública
+[AndersonMoncayo/awesome-modern-ui](https://github.com/AndersonMoncayo/awesome-modern-ui).
 
 ## Licencia
 
-Código propio bajo [MIT](./LICENSE). Los recursos enlazados conservan las licencias de sus respectivos autores.
-Las Web Quality Skills incluidas conservan la licencia MIT y atribución de Addy
-Osmani en [THIRD_PARTY_NOTICES.md](./THIRD_PARTY_NOTICES.md).
+Código propio bajo [MIT](./LICENSE). Los recursos enlazados conservan las
+licencias, marcas y derechos de sus respectivos autores.
 `
 
 await writeFile(resolve(process.cwd(), "../../README.md"), readme)

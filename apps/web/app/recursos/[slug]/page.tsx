@@ -1,11 +1,13 @@
 import { ArrowLeft, ArrowUpRight, CheckCircle2 } from "lucide-react"
 import type { Metadata } from "next"
+import Image from "next/image"
 import Link from "next/link"
 import { notFound } from "next/navigation"
 
 import { Badge } from "@workspace/ui/components/badge"
 import { Button } from "@workspace/ui/components/button"
 
+import { ResourceCard } from "@/components/resource-card"
 import { categoryLabels, getResource, resources } from "@/lib/catalog"
 
 export function generateStaticParams() {
@@ -18,7 +20,13 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>
 }): Promise<Metadata> {
   const item = getResource((await params).slug)
-  return item ? { title: item.name, description: item.description } : {}
+  return item
+    ? {
+        title: item.name,
+        description: item.description,
+        openGraph: { images: [{ url: item.image, alt: item.imageAlt }] },
+      }
+    : {}
 }
 
 export default async function ResourcePage({ params }: { params: Promise<{ slug: string }> }) {
@@ -33,30 +41,74 @@ export default async function ResourcePage({ params }: { params: Promise<{ slug:
     description: item.description,
     applicationCategory: categoryLabels[item.category],
   }
+  const related = resources
+    .filter((resource) => resource.category === item.category && resource.slug !== item.slug)
+    .slice(0, 3)
 
   return (
-    <main className="mx-auto max-w-4xl px-5 py-14 lg:px-8">
+    <main className="mx-auto max-w-7xl px-5 py-14 lg:px-8">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <Button asChild variant="ghost"><Link href="/recursos"><ArrowLeft data-icon="inline-start" />Recursos</Link></Button>
-      <div className="glass mt-6 rounded-3xl p-7 sm:p-10">
-        <div className="flex flex-wrap gap-2">
-          <Badge>{categoryLabels[item.category]}</Badge>
-          <Badge variant="outline">{item.type}</Badge>
-          <Badge variant="outline">{item.pricing}</Badge>
+      <article className="glass mt-6 overflow-hidden rounded-3xl">
+        <div className="relative aspect-[16/9] border-b bg-muted lg:aspect-[2/1]">
+          <Image
+            src={item.image}
+            alt={item.imageAlt}
+            fill
+            priority
+            sizes="(min-width: 1280px) 1200px, 100vw"
+            className="object-cover"
+          />
         </div>
-        <h1 className="mt-6 text-4xl font-semibold tracking-tight sm:text-6xl">{item.name}</h1>
-        <p className="mt-5 text-xl leading-relaxed text-muted-foreground">{item.description}</p>
-        <div className="mt-9 rounded-2xl border bg-background/50 p-6">
-          <p className="flex items-center gap-2 font-medium"><CheckCircle2 className="size-5 text-primary" />Por qué está aquí</p>
-          <p className="mt-3 leading-relaxed text-muted-foreground">{item.reason}</p>
+        <div className="grid gap-10 p-7 sm:p-10 lg:grid-cols-[1.4fr_0.6fr]">
+          <div>
+            <div className="flex flex-wrap gap-2">
+              <Badge>{categoryLabels[item.category]}</Badge>
+              <Badge variant="outline">{item.type}</Badge>
+              <Badge variant="outline">{item.pricing}</Badge>
+            </div>
+            <h1 className="mt-6 text-4xl font-semibold tracking-[-0.045em] sm:text-6xl">
+              {item.name}
+            </h1>
+            <p className="mt-5 text-xl leading-relaxed text-muted-foreground">{item.description}</p>
+            <div className="mt-9 rounded-2xl border bg-background/50 p-6">
+              <p className="flex items-center gap-2 font-medium">
+                <CheckCircle2 className="size-5 text-primary" />
+                Por qué lo recomendamos
+              </p>
+              <p className="mt-3 leading-relaxed text-muted-foreground">{item.reason}</p>
+            </div>
+            <Button asChild size="lg" className="mt-8">
+              <a href={item.url}>
+                Abrir sitio oficial <ArrowUpRight data-icon="inline-end" />
+              </a>
+            </Button>
+          </div>
+          <aside className="rounded-2xl border bg-background/45 p-6">
+            <h2 className="font-semibold">Ficha rápida</h2>
+            <dl className="mt-6 grid gap-6">
+              <div><dt className="text-sm text-muted-foreground">Licencia</dt><dd className="mt-1 font-medium">{item.license}</dd></div>
+              <div><dt className="text-sm text-muted-foreground">Frameworks</dt><dd className="mt-1 font-medium">{item.frameworks.join(", ")}</dd></div>
+              <div><dt className="text-sm text-muted-foreground">Mantenimiento</dt><dd className="mt-1 font-medium">{item.maintained ? "Activo" : "Revisar"}</dd></div>
+              <div>
+                <dt className="text-sm text-muted-foreground">Ideal para</dt>
+                <dd className="mt-2 flex flex-wrap gap-2">
+                  {item.tags.map((tag) => <Badge key={tag} variant="secondary">{tag}</Badge>)}
+                </dd>
+              </div>
+            </dl>
+          </aside>
         </div>
-        <dl className="mt-8 grid gap-6 sm:grid-cols-3">
-          <div><dt className="text-sm text-muted-foreground">Licencia</dt><dd className="mt-1 font-medium">{item.license}</dd></div>
-          <div><dt className="text-sm text-muted-foreground">Frameworks</dt><dd className="mt-1 font-medium">{item.frameworks.join(", ")}</dd></div>
-          <div><dt className="text-sm text-muted-foreground">Mantenimiento</dt><dd className="mt-1 font-medium">{item.maintained ? "Activo" : "Revisar"}</dd></div>
-        </dl>
-        <Button asChild size="lg" className="mt-10"><a href={item.url}>Abrir sitio oficial <ArrowUpRight data-icon="inline-end" /></a></Button>
-      </div>
+      </article>
+
+      {related.length ? (
+        <section className="py-14">
+          <h2 className="text-2xl font-semibold tracking-tight">Más recursos de esta categoría</h2>
+          <div className="mt-6 grid gap-4 md:grid-cols-3">
+            {related.map((resource) => <ResourceCard key={resource.slug} item={resource} />)}
+          </div>
+        </section>
+      ) : null}
     </main>
   )
 }

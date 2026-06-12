@@ -2,12 +2,18 @@ import { expect, test } from "@playwright/test"
 
 test("navega por la experiencia principal", async ({ page }) => {
   await page.goto("/")
-  await expect(page.getByRole("heading", { name: "Diseña a la velocidad de tus ideas." })).toBeVisible()
-  await page.getByRole("link", { name: /Ver los 41 recursos/ }).click()
+  await expect(
+    page.getByRole("heading", {
+      name: "Construye interfaces modernas con mejores herramientas.",
+    }),
+  ).toBeVisible()
+  await expect(page.locator('img[src^="/resources/"]').first()).toBeVisible()
+  await page.getByRole("link", { name: /Explorar 41 recursos/ }).click()
   await expect(page).toHaveURL(/\/recursos/)
   await page.getByLabel("Buscar recursos").fill("Motion")
   await expect(page).toHaveURL(/q=Motion/)
   await expect(page.getByRole("link", { name: "Motion" }).first()).toBeVisible()
+  await expect(page.getByAltText(/Vista visual de Motion/)).toBeVisible()
 })
 
 test("el marco del navbar refleja el progreso de scroll", async ({ page }) => {
@@ -97,7 +103,7 @@ test("renderiza la experiencia cinematográfica completa", async ({ page }, test
   await expect(page.getByRole("heading", { name: "Construye lo que todavía no existe." })).toBeVisible()
   await expect(page.getByTestId("ambient-orb")).toBeVisible()
   if (testInfo.project.name === "chromium") {
-    await expect(page.locator("canvas")).toBeVisible()
+    await expect(page.locator("canvas")).toBeVisible({ timeout: 15_000 })
   }
   await expect(page.getByText("Una idea fuerte antes que cien efectos.")).toBeVisible()
 

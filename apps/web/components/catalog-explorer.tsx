@@ -62,7 +62,7 @@ export function CatalogExplorer({ compact = false }: { compact?: boolean }) {
               setParam("q", value)
             }}
             className="h-11 pl-10"
-            placeholder="Buscar componentes, tecnologías o patrones..."
+            placeholder="Buscar herramientas para diseño y desarrollo web..."
             aria-label="Buscar recursos"
           />
         </label>
@@ -126,7 +126,7 @@ export function CatalogExplorer({ compact = false }: { compact?: boolean }) {
           </div>
         ) : null}
       </div>
-      <div className="mt-5 grid gap-3 md:grid-cols-2 lg:grid-cols-4">
+      <div className="mt-5 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
         {shown.map((item) => <ResourceCard key={item.slug} item={item} />)}
       </div>
       {shown.length === 0 ? (

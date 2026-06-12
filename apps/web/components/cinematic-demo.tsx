@@ -14,7 +14,13 @@ import { LiquidGlass } from "@workspace/ui/components/liquid-glass"
 const AmbientOrb = dynamic(
   () => import("@workspace/effects/ambient-orb").then((module) => module.AmbientOrb),
   {
-    loading: () => <div className="h-full w-full rounded-full bg-violet-500/15 blur-3xl" />,
+    loading: () => (
+      <div
+        aria-hidden="true"
+        className="h-full w-full rounded-full bg-violet-500/15 blur-3xl"
+        data-testid="ambient-orb"
+      />
+    ),
     ssr: false,
   },
 )
@@ -54,7 +60,7 @@ export function CinematicDemo() {
               transition={{ duration: 0.6 }}
               className="mb-6 text-xs font-medium uppercase tracking-[0.28em] text-violet-300"
             >
-              Creative web starter / 2026
+              Creative web design / 2026
             </motion.p>
             <SplitTextReveal className="text-6xl font-semibold tracking-[-0.07em] text-balance sm:text-7xl lg:text-[clamp(5rem,9vw,9.5rem)] lg:leading-[0.82]">
               Construye lo que todavía no existe.
@@ -99,7 +105,7 @@ export function CinematicDemo() {
               Tecnología al servicio de la historia.
             </h2>
             <p className="max-w-xl self-end text-lg leading-relaxed text-white/50">
-              Esta plantilla combina las capas del repositorio y muestra a Claude Code o Codex cuándo debe usar cada una.
+              Este diseño combina tipografía, movimiento, profundidad y 3D para presentar un producto digital con una narrativa clara.
             </p>
           </div>
 
@@ -137,7 +143,7 @@ export function CinematicDemo() {
             Cambia el contenido. Conserva el nivel.
           </h2>
           <p className="mx-auto mt-6 max-w-2xl text-lg text-white/50">
-            Los módulos están instalados, tipados y separados para que un agente pueda adaptar esta base sin reconstruir la infraestructura.
+            Cada efecto está separado para mantener la experiencia rápida, accesible y fácil de adaptar a una web real.
           </p>
         </section>
       </div>

@@ -13,6 +13,7 @@
     "test": "vitest run",
     "test:e2e": "playwright test",
     "catalog:validate": "tsx scripts/validate-catalog.ts",
+    "resources:images": "tsx scripts/generate-resource-images.ts",
     "readme:generate": "tsx scripts/generate-readme.ts",
     "registry:generate": "tsx scripts/generate-registry.ts"
   },

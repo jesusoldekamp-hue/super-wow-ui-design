@@ -25,11 +25,11 @@ export const metadata: Metadata = {
     template: "%s | Awesome Modern UI",
   },
   description:
-    "Starter, componentes, plantillas y recursos curados para crear interfaces web modernas.",
+    "Directorio visual de recursos para diseñar páginas web y aplicaciones modernas.",
   openGraph: {
     title: "Awesome Modern UI",
     description:
-      "Diseña a la velocidad de tus ideas con un kit moderno y reutilizable.",
+      "Herramientas, componentes, animación e inspiración para diseño web y apps.",
     type: "website",
     locale: "es_MX",
   },

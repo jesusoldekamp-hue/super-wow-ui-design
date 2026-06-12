@@ -19,4 +19,11 @@ describe("catalog", () => {
     expect(getResource("web-quality-skills")?.license).toBe("MIT")
     expect(getResource("no-existe")).toBeUndefined()
   })
+
+  it("incluye una portada local para cada recurso", () => {
+    for (const resource of resources) {
+      expect(resource.image).toBe(`/resources/${resource.slug}.svg`)
+      expect(resource.imageAlt).toContain(resource.name)
+    }
+  })
 })

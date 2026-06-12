@@ -4,7 +4,10 @@ import Link from "next/link"
 
 import { Button } from "@workspace/ui/components/button"
 
-export const metadata: Metadata = { title: "Plantillas" }
+export const metadata: Metadata = {
+  title: "Diseños",
+  description: "Ejemplos visuales de landings, dashboards, portfolios y experiencias web.",
+}
 
 const templates = [
   ["landing", "Landing Signal", "Lanzamiento cinematográfico con narrativa, señal visual, prueba y conversión.", PanelsTopLeft],
@@ -16,8 +19,9 @@ const templates = [
 export default function TemplatesPage() {
   return (
     <main className="mx-auto max-w-7xl px-5 py-14 lg:px-8">
-      <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">Cuatro experiencias cinematográficas</h1>
-      <p className="mt-4 max-w-2xl text-lg text-muted-foreground">Narrativas completas con dirección visual propia, movimiento avanzado, glass, scroll y composición responsive.</p>
+      <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">Galería de diseños</p>
+      <h1 className="mt-3 text-4xl font-semibold tracking-tight sm:text-5xl">Interfaces para web y aplicaciones</h1>
+      <p className="mt-4 max-w-2xl text-lg text-muted-foreground">Landings, dashboards y portfolios con dirección visual, movimiento, glass, scroll y composición responsive.</p>
       <div className="mt-10 grid gap-5 md:grid-cols-2">
         {templates.map(([slug, name, description, Icon]) => (
           <article key={slug} className="glass flex min-h-96 flex-col rounded-2xl p-6">

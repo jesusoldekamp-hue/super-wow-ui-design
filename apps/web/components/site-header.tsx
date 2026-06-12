@@ -14,9 +14,9 @@ import { ThemeToggle } from "./theme-toggle"
 import { SiteNavOutline } from "./site-nav-outline"
 
 const links = [
-  ["Componentes", "/componentes"],
-  ["Plantillas", "/plantillas"],
   ["Recursos", "/recursos"],
+  ["Diseños", "/plantillas"],
+  ["Componentes", "/componentes"],
   ["Guías", "/guias"],
 ] as const
 

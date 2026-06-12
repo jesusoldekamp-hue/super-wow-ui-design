@@ -15,7 +15,7 @@ export default function ComponentsPage() {
         title="Bloques modernos. Código tuyo."
         description="Primitives accesibles y composiciones listas para adaptar. Sin caja negra, sin estilos imposibles de sobrescribir."
         primaryAction={<a href="/r/hero-modern.json">Instalar hero <ArrowRight data-icon="inline-end" /></a>}
-        secondaryAction={<Link href="/plantillas">Ver plantillas</Link>}
+        secondaryAction={<Link href="/plantillas">Ver diseños</Link>}
         preview={
           <div className="flex min-h-64 flex-col justify-between rounded-xl border bg-background/60 p-6">
             <div className="h-2 w-20 rounded-full bg-primary/70" />

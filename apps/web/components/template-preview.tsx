@@ -12,8 +12,8 @@ export function TemplatePreview() {
   return (
     <div className="glass rounded-2xl p-4">
       <div className="mb-3">
-        <h2 className="font-semibold">Plantillas reutilizables</h2>
-        <p className="text-sm text-muted-foreground">Listas para usar. Fáciles de adaptar.</p>
+        <h2 className="font-semibold">Diseños para web y apps</h2>
+        <p className="text-sm text-muted-foreground">Referencias completas y adaptables.</p>
       </div>
       <div className="flex flex-col gap-2">
         {templates.map(({ slug, name, text, icon: Icon }) => (

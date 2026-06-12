@@ -21,10 +21,10 @@ export default function OpenGraphImage() {
       <div style={{ display: "flex", width: 1000, flexDirection: "column" }}>
         <div style={{ display: "flex", fontSize: 28, color: "#9b8cff" }}>Awesome Modern UI</div>
         <div style={{ display: "flex", marginTop: 28, fontSize: 72, fontWeight: 700, letterSpacing: "-4px", lineHeight: 1.05 }}>
-          Diseña a la velocidad de tus ideas.
+          Recursos para diseñar webs y apps modernas.
         </div>
         <div style={{ display: "flex", marginTop: 30, fontSize: 28, color: "#aab2c4" }}>
-          Starter, componentes, plantillas y 41 recursos curados.
+          Componentes, animación, 3D, rendimiento e inspiración.
         </div>
       </div>
     </div>,

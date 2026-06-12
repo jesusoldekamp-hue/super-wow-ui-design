@@ -4,7 +4,7 @@ export default function manifest(): MetadataRoute.Manifest {
   return {
     name: "Awesome Modern UI",
     short_name: "AMUI",
-    description: "Componentes, plantillas y recursos modernos para la web.",
+    description: "Recursos visuales para diseñar páginas web y aplicaciones modernas.",
     start_url: "/",
     display: "standalone",
     background_color: "#080d18",
