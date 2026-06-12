@@ -1,4 +1,5 @@
-import { mkdir, writeFile } from "node:fs/promises"
+import { mkdir, rm, writeFile } from "node:fs/promises"
+import { dirname } from "node:path"
 
 const repository = "addyosmani/web-quality-skills"
 const requestedRef = process.env.WEB_QUALITY_SKILLS_REF ?? "main"
@@ -34,14 +35,34 @@ if (!commitResponse.ok) {
 
 const { sha } = await commitResponse.json()
 const rawBase = `https://raw.githubusercontent.com/${repository}/${sha}`
+const treeResponse = await fetch(
+  `https://api.github.com/repos/${repository}/git/trees/${sha}?recursive=1`,
+  { headers: { "User-Agent": "awesome-modern-ui-skill-sync" } },
+)
 
-for (const skill of skills) {
-  const contents = await fetchText(`${rawBase}/skills/${skill}/SKILL.md`)
+if (!treeResponse.ok) {
+  throw new Error(`No se pudo leer el árbol de ${sha}: ${treeResponse.status}`)
+}
 
-  for (const root of [".codex/skills", ".claude/skills"]) {
-    const directory = `${root}/${skill}`
-    await mkdir(directory, { recursive: true })
-    await writeFile(`${directory}/SKILL.md`, contents)
+const { tree } = await treeResponse.json()
+const skillFiles = tree
+  .filter(
+    (item) =>
+      item.type === "blob" &&
+      skills.some((skill) => item.path.startsWith(`skills/${skill}/`)),
+  )
+  .map((item) => item.path)
+  .sort()
+
+for (const root of [".codex/skills", ".claude/skills"]) {
+  for (const skill of skills) {
+    await rm(`${root}/${skill}`, { recursive: true, force: true })
+  }
+
+  for (const sourcePath of skillFiles) {
+    const targetPath = `${root}/${sourcePath.replace(/^skills\//, "")}`
+    await mkdir(dirname(targetPath), { recursive: true })
+    await writeFile(targetPath, await fetchText(`${rawBase}/${sourcePath}`))
   }
 }
 
@@ -58,6 +79,7 @@ await writeFile(
       license: "MIT",
       author: "Addy Osmani",
       syncedAt: new Date().toISOString().slice(0, 10),
+      files: skillFiles,
     },
     null,
     2,

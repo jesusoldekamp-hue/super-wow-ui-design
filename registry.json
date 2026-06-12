@@ -40,6 +40,11 @@
           "target": "~/.codex/skills/web-quality-audit/SKILL.md"
         },
         {
+          "path": ".codex/skills/web-quality-audit/scripts/analyze.sh",
+          "type": "registry:file",
+          "target": "~/.codex/skills/web-quality-audit/scripts/analyze.sh"
+        },
+        {
           "path": ".codex/skills/performance/SKILL.md",
           "type": "registry:file",
           "target": "~/.codex/skills/performance/SKILL.md"
@@ -50,9 +55,24 @@
           "target": "~/.codex/skills/core-web-vitals/SKILL.md"
         },
         {
+          "path": ".codex/skills/core-web-vitals/references/LCP.md",
+          "type": "registry:file",
+          "target": "~/.codex/skills/core-web-vitals/references/LCP.md"
+        },
+        {
           "path": ".codex/skills/accessibility/SKILL.md",
           "type": "registry:file",
           "target": "~/.codex/skills/accessibility/SKILL.md"
+        },
+        {
+          "path": ".codex/skills/accessibility/references/A11Y-PATTERNS.md",
+          "type": "registry:file",
+          "target": "~/.codex/skills/accessibility/references/A11Y-PATTERNS.md"
+        },
+        {
+          "path": ".codex/skills/accessibility/references/WCAG.md",
+          "type": "registry:file",
+          "target": "~/.codex/skills/accessibility/references/WCAG.md"
         },
         {
           "path": ".codex/skills/seo/SKILL.md",
@@ -70,6 +90,11 @@
           "target": "~/.claude/skills/web-quality-audit/SKILL.md"
         },
         {
+          "path": ".claude/skills/web-quality-audit/scripts/analyze.sh",
+          "type": "registry:file",
+          "target": "~/.claude/skills/web-quality-audit/scripts/analyze.sh"
+        },
+        {
           "path": ".claude/skills/performance/SKILL.md",
           "type": "registry:file",
           "target": "~/.claude/skills/performance/SKILL.md"
@@ -80,9 +105,24 @@
           "target": "~/.claude/skills/core-web-vitals/SKILL.md"
         },
         {
+          "path": ".claude/skills/core-web-vitals/references/LCP.md",
+          "type": "registry:file",
+          "target": "~/.claude/skills/core-web-vitals/references/LCP.md"
+        },
+        {
           "path": ".claude/skills/accessibility/SKILL.md",
           "type": "registry:file",
           "target": "~/.claude/skills/accessibility/SKILL.md"
+        },
+        {
+          "path": ".claude/skills/accessibility/references/A11Y-PATTERNS.md",
+          "type": "registry:file",
+          "target": "~/.claude/skills/accessibility/references/A11Y-PATTERNS.md"
+        },
+        {
+          "path": ".claude/skills/accessibility/references/WCAG.md",
+          "type": "registry:file",
+          "target": "~/.claude/skills/accessibility/references/WCAG.md"
         },
         {
           "path": ".claude/skills/seo/SKILL.md",
@@ -148,6 +188,11 @@
           "target": "~/.codex/skills/web-quality-audit/SKILL.md"
         },
         {
+          "path": ".codex/skills/web-quality-audit/scripts/analyze.sh",
+          "type": "registry:file",
+          "target": "~/.codex/skills/web-quality-audit/scripts/analyze.sh"
+        },
+        {
           "path": ".codex/skills/performance/SKILL.md",
           "type": "registry:file",
           "target": "~/.codex/skills/performance/SKILL.md"
@@ -158,9 +203,24 @@
           "target": "~/.codex/skills/core-web-vitals/SKILL.md"
         },
         {
+          "path": ".codex/skills/core-web-vitals/references/LCP.md",
+          "type": "registry:file",
+          "target": "~/.codex/skills/core-web-vitals/references/LCP.md"
+        },
+        {
           "path": ".codex/skills/accessibility/SKILL.md",
           "type": "registry:file",
           "target": "~/.codex/skills/accessibility/SKILL.md"
+        },
+        {
+          "path": ".codex/skills/accessibility/references/A11Y-PATTERNS.md",
+          "type": "registry:file",
+          "target": "~/.codex/skills/accessibility/references/A11Y-PATTERNS.md"
+        },
+        {
+          "path": ".codex/skills/accessibility/references/WCAG.md",
+          "type": "registry:file",
+          "target": "~/.codex/skills/accessibility/references/WCAG.md"
         },
         {
           "path": ".codex/skills/seo/SKILL.md",
@@ -178,6 +238,11 @@
           "target": "~/.claude/skills/web-quality-audit/SKILL.md"
         },
         {
+          "path": ".claude/skills/web-quality-audit/scripts/analyze.sh",
+          "type": "registry:file",
+          "target": "~/.claude/skills/web-quality-audit/scripts/analyze.sh"
+        },
+        {
           "path": ".claude/skills/performance/SKILL.md",
           "type": "registry:file",
           "target": "~/.claude/skills/performance/SKILL.md"
@@ -188,9 +253,24 @@
           "target": "~/.claude/skills/core-web-vitals/SKILL.md"
         },
         {
+          "path": ".claude/skills/core-web-vitals/references/LCP.md",
+          "type": "registry:file",
+          "target": "~/.claude/skills/core-web-vitals/references/LCP.md"
+        },
+        {
           "path": ".claude/skills/accessibility/SKILL.md",
           "type": "registry:file",
           "target": "~/.claude/skills/accessibility/SKILL.md"
+        },
+        {
+          "path": ".claude/skills/accessibility/references/A11Y-PATTERNS.md",
+          "type": "registry:file",
+          "target": "~/.claude/skills/accessibility/references/A11Y-PATTERNS.md"
+        },
+        {
+          "path": ".claude/skills/accessibility/references/WCAG.md",
+          "type": "registry:file",
+          "target": "~/.claude/skills/accessibility/references/WCAG.md"
         },
         {
           "path": ".claude/skills/seo/SKILL.md",

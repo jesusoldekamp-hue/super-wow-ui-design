@@ -38,6 +38,18 @@ for (const skill of qualitySkills) {
   )
 }
 
+const qualitySource = JSON.parse(
+  await readFile("third_party/web-quality-skills/source.json", "utf8"),
+)
+
+for (const sourcePath of qualitySource.files ?? []) {
+  const relativePath = sourcePath.replace(/^skills\//, "")
+  requiredFiles.push(
+    `.codex/skills/${relativePath}`,
+    `.claude/skills/${relativePath}`,
+  )
+}
+
 const requiredDependencies = [
   "@gsap/react",
   "@react-three/drei",
@@ -71,13 +83,14 @@ if (missingFiles.length || missingDependencies.length) {
 }
 
 const divergentSkills = []
-for (const skill of qualitySkills) {
+for (const sourcePath of qualitySource.files ?? []) {
+  const relativePath = sourcePath.replace(/^skills\//, "")
   const [codexSkill, claudeSkill] = await Promise.all([
-    readFile(`.codex/skills/${skill}/SKILL.md`, "utf8"),
-    readFile(`.claude/skills/${skill}/SKILL.md`, "utf8"),
+    readFile(`.codex/skills/${relativePath}`, "utf8"),
+    readFile(`.claude/skills/${relativePath}`, "utf8"),
   ])
 
-  if (codexSkill !== claudeSkill) divergentSkills.push(skill)
+  if (codexSkill !== claudeSkill) divergentSkills.push(relativePath)
 }
 
 if (divergentSkills.length) {
