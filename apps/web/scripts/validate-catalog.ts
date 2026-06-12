@@ -25,6 +25,10 @@ const schema = z.object({
 
 const slugs = new Set<string>()
 const urls = new Set<string>()
+const minResources = 40
+const maxResources = 60
+const minFeatured = 6
+const maxFeatured = 12
 
 for (const item of resources) {
   schema.parse(item)
@@ -38,8 +42,24 @@ for (const item of resources) {
   urls.add(item.url)
 }
 
-if (resources.length !== 41) {
-  throw new Error(`El catálogo debe contener exactamente 41 recursos; contiene ${resources.length}.`)
+if (resources.length < minResources || resources.length > maxResources) {
+  throw new Error(
+    `El catálogo debe contener entre ${minResources} y ${maxResources} recursos curados; contiene ${resources.length}.`
+  )
+}
+
+for (const category of categories) {
+  const count = resources.filter((item) => item.category === category).length
+  if (count < 3) {
+    throw new Error(`La categoría ${category} debe tener al menos 3 recursos; contiene ${count}.`)
+  }
+}
+
+const featuredCount = resources.filter((item) => item.featured).length
+if (featuredCount < minFeatured || featuredCount > maxFeatured) {
+  throw new Error(
+    `El catálogo debe tener entre ${minFeatured} y ${maxFeatured} destacados; contiene ${featuredCount}.`
+  )
 }
 
 console.log(`Catálogo válido: ${resources.length} recursos, ${categories.length} categorías.`)

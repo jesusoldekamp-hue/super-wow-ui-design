@@ -34,7 +34,7 @@
     <circle cx="134" cy="96" r="7" fill="#F7C95C"/>
     <circle cx="160" cy="96" r="7" fill="#5BD18A"/>
     <rect x="210" y="82" width="375" height="28" rx="14" fill="#fff" fill-opacity=".06"/>
-    <text x="232" y="101" fill="#AAB4CC" font-family="ui-monospace, SFMono-Regular, monospace" font-size="13">smashingmagazine.com</text>
+    <text x="232" y="101" fill="#AAB4CC" font-family="ui-monospace, SFMono-Regular, monospace" font-size="13">css.glass</text>
   </g>
 
   <rect x="110" y="166" width="286" height="34" rx="17" fill="#c084fc" fill-opacity=".15" stroke="#c084fc" stroke-opacity=".45"/>

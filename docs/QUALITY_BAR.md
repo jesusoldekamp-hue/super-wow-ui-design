@@ -22,6 +22,7 @@
 - Fuentes con `next/font`.
 - No se cargan GSAP, Lenis o Three.js en rutas que no los importan.
 - No hay errores de TypeScript, lint, hidratación ni consola.
+- Los enlaces del catálogo pasan `corepack pnpm links:check` sin fallos ni warnings.
 
 ## Objetivos
 

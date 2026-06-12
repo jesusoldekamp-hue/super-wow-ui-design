@@ -154,6 +154,7 @@ Después abre \`http://localhost:3000\`.
 \`\`\`bash
 corepack pnpm resources:images
 corepack pnpm readme:generate
+corepack pnpm links:check
 corepack pnpm check
 \`\`\`
 

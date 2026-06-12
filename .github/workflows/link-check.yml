@@ -1,0 +1,25 @@
+name: Link Check
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "23 9 * * 1"
+
+permissions:
+  contents: read
+
+jobs:
+  links:
+    name: Catalog URLs
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: pnpm/action-setup@v6
+        with:
+          version: 10.33.4
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm links:check

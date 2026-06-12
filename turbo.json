@@ -1,6 +1,7 @@
 {
   "$schema": "https://turbo.build/schema.json",
   "ui": "tui",
+  "globalEnv": ["LINK_CHECK_CONCURRENCY", "LINK_CHECK_TIMEOUT_MS"],
   "tasks": {
     "build": {
       "dependsOn": ["^build"],

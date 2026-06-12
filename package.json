@@ -12,12 +12,13 @@
     "test": "corepack pnpm --filter web test",
     "test:e2e": "corepack pnpm --filter web test:e2e",
     "catalog:validate": "corepack pnpm --filter web catalog:validate",
+    "links:check": "corepack pnpm --filter web links:check",
     "resources:images": "corepack pnpm --filter web resources:images",
     "readme:generate": "corepack pnpm --filter web readme:generate",
     "registry:generate": "corepack pnpm --filter web registry:generate",
     "quality:skills:update": "node scripts/sync-web-quality-skills.mjs",
     "check": "corepack pnpm resources:images && corepack pnpm catalog:validate && corepack pnpm readme:generate && corepack pnpm registry:generate && corepack pnpm lint && corepack pnpm typecheck && corepack pnpm test && corepack pnpm build",
-    "ready": "corepack pnpm doctor && corepack pnpm check && corepack pnpm test:e2e"
+    "ready": "corepack pnpm doctor && corepack pnpm check && corepack pnpm links:check && corepack pnpm test:e2e"
   },
   "devDependencies": {
     "@workspace/eslint-config": "workspace:*",

@@ -3,9 +3,11 @@ import { describe, expect, it } from "vitest"
 import { filterResources, getResource, resources } from "./catalog"
 
 describe("catalog", () => {
-  it("mantiene una selección estricta de 41 recursos", () => {
-    expect(resources).toHaveLength(41)
-    expect(new Set(resources.map((item) => item.slug)).size).toBe(41)
+  it("mantiene una selección estricta y suficiente", () => {
+    expect(resources.length).toBeGreaterThanOrEqual(40)
+    expect(resources.length).toBeLessThanOrEqual(60)
+    expect(new Set(resources.map((item) => item.slug)).size).toBe(resources.length)
+    expect(resources.filter((item) => item.featured).length).toBeGreaterThanOrEqual(6)
   })
 
   it("encuentra recursos por tecnología y categoría", () => {
