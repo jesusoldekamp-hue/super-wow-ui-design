@@ -3,9 +3,9 @@ import { describe, expect, it } from "vitest"
 import { filterResources, getResource, resources } from "./catalog"
 
 describe("catalog", () => {
-  it("mantiene una selección estricta de 40 recursos", () => {
-    expect(resources).toHaveLength(40)
-    expect(new Set(resources.map((item) => item.slug)).size).toBe(40)
+  it("mantiene una selección estricta de 41 recursos", () => {
+    expect(resources).toHaveLength(41)
+    expect(new Set(resources.map((item) => item.slug)).size).toBe(41)
   })
 
   it("encuentra recursos por tecnología y categoría", () => {
@@ -16,6 +16,7 @@ describe("catalog", () => {
 
   it("resuelve páginas por slug", () => {
     expect(getResource("motion")?.name).toBe("Motion")
+    expect(getResource("web-quality-skills")?.license).toBe("MIT")
     expect(getResource("no-existe")).toBeUndefined()
   })
 })

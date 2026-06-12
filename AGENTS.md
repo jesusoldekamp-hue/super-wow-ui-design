@@ -18,6 +18,7 @@ Construye experiencias originales con el nivel de claridad, narrativa y detalle 
 2. Busca componentes existentes en `packages/ui` y efectos en `packages/effects`.
 3. Conserva Server Components por defecto. Añade `"use client"` solo en el límite interactivo.
 4. Decide primero la historia, la jerarquía y el sistema visual; después elige animaciones.
+5. Para cambios web sustanciales, aplica las skills locales de calidad antes de declarar terminado el trabajo.
 
 ## Selección técnica
 
@@ -41,6 +42,23 @@ No instales una segunda biblioteca para una capacidad que el repositorio ya resu
 - No uses imágenes de stock genéricas, gradientes arbitrarios ni glassmorphism en todas las superficies.
 - No afirmes que una página está terminada hasta ejecutar `pnpm ready`.
 
+## Skills de calidad web
+
+El repositorio incluye las seis skills MIT de
+[addyosmani/web-quality-skills](https://github.com/addyosmani/web-quality-skills)
+para Claude Code y Codex:
+
+- `web-quality-audit`: revisión integral y orquestación.
+- `performance`: carga, recursos y ejecución.
+- `core-web-vitals`: LCP, INP y CLS.
+- `accessibility`: WCAG 2.2, teclado y tecnologías asistivas.
+- `seo`: indexabilidad, metadatos, contenido y datos estructurados.
+- `best-practices`: seguridad, compatibilidad y calidad técnica.
+
+Antes de una entrega web, usa `web-quality-audit` como puerta de entrada y
+aplica las skills especializadas cuando existan hallazgos. Las instrucciones
+están disponibles en `.codex/skills/` y `.claude/skills/`.
+
 ## Rutas de referencia
 
 - `/plantillas/landing`: marketing y SaaS.
@@ -57,6 +75,7 @@ corepack pnpm doctor
 corepack pnpm check
 corepack pnpm test:e2e
 corepack pnpm ready
+corepack pnpm quality:skills:update
 ```
 
 Cuando recibas un brief, modifica una plantilla existente o crea una nueva ruta; no conviertas la galería principal en el proyecto del usuario.

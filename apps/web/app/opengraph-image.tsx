@@ -24,7 +24,7 @@ export default function OpenGraphImage() {
           Diseña a la velocidad de tus ideas.
         </div>
         <div style={{ display: "flex", marginTop: 30, fontSize: 28, color: "#aab2c4" }}>
-          Starter, componentes, plantillas y 40 recursos curados.
+          Starter, componentes, plantillas y 41 recursos curados.
         </div>
       </div>
     </div>,

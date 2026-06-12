@@ -45,6 +45,10 @@ Cada capa debe degradar a una experiencia estática completa con `prefers-reduce
 
 ## 5. Verificación
 
+Primero aplica la skill local `web-quality-audit`. Usa las skills
+especializadas para profundizar en rendimiento, Core Web Vitals,
+accesibilidad, SEO o buenas prácticas y corrige los hallazgos relevantes.
+
 Ejecuta:
 
 ```bash
@@ -63,3 +67,6 @@ Después inspecciona:
 - LCP, CLS y peso de escenas avanzadas.
 
 `corepack pnpm ready` agrupa las validaciones automatizadas.
+
+Consulta `docs/WEB_QUALITY_SKILLS.md` para el mapa completo y la procedencia de
+las skills.

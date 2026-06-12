@@ -14,6 +14,7 @@
     "catalog:validate": "corepack pnpm --filter web catalog:validate",
     "readme:generate": "corepack pnpm --filter web readme:generate",
     "registry:generate": "corepack pnpm --filter web registry:generate",
+    "quality:skills:update": "node scripts/sync-web-quality-skills.mjs",
     "check": "corepack pnpm catalog:validate && corepack pnpm registry:generate && corepack pnpm lint && corepack pnpm typecheck && corepack pnpm test && corepack pnpm build",
     "ready": "corepack pnpm doctor && corepack pnpm check && corepack pnpm test:e2e"
   },

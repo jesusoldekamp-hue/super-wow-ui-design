@@ -9,7 +9,7 @@ const schema = z.object({
   description: z.string().min(20),
   reason: z.string().min(20),
   category: z.enum(categories),
-  type: z.enum(["framework", "libreria", "plugin", "api", "plataforma", "metrica", "patron", "feature"]),
+  type: z.enum(["framework", "libreria", "plugin", "api", "plataforma", "metrica", "patron", "feature", "skill"]),
   frameworks: z.array(z.string()).min(1),
   tags: z.array(z.string()).min(1),
   pricing: z.enum(["gratis", "freemium", "pago"]),
@@ -29,8 +29,8 @@ for (const item of resources) {
   urls.add(item.url)
 }
 
-if (resources.length !== 40) {
-  throw new Error(`El catálogo debe contener exactamente 40 recursos; contiene ${resources.length}.`)
+if (resources.length !== 41) {
+  throw new Error(`El catálogo debe contener exactamente 41 recursos; contiene ${resources.length}.`)
 }
 
 console.log(`Catálogo válido: ${resources.length} recursos, ${categories.length} categorías.`)

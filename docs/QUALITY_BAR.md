@@ -26,7 +26,17 @@
 ## Objetivos
 
 - Lighthouse performance >= 90.
-- Accesibilidad, SEO y buenas prácticas >= 95.
-- CLS <= 0.1.
+- Accesibilidad = 100.
+- SEO y buenas prácticas >= 95.
+- LCP <= 2.5 s, INP <= 200 ms y CLS <= 0.1 en el percentil 75.
 - Navegación completa con teclado.
 - Sin overflow horizontal a 375 px.
+
+## Auditoría del agente
+
+Antes de entregar cambios web sustanciales:
+
+1. Ejecuta la skill `web-quality-audit`.
+2. Aplica las skills especializadas indicadas por sus hallazgos.
+3. Ejecuta `corepack pnpm ready`.
+4. No sustituyas mediciones reales por una afirmación del agente.

@@ -19,6 +19,7 @@ export type ResourceType =
   | "metrica"
   | "patron"
   | "feature"
+  | "skill"
 
 export type Resource = {
   name: string
@@ -94,6 +95,7 @@ export const resources: Resource[] = [
   r("next/font", "next-font", "https://nextjs.org/docs/app/getting-started/fonts", "Carga y autoalojamiento optimizado de fuentes.", "Evita solicitudes externas y reduce cambios de layout.", "rendimiento", "feature", ["Next.js"], ["Tipografía", "CLS"], "MIT"),
   r("Vercel", "vercel", "https://vercel.com", "Plataforma de despliegue optimizada para frontend.", "Preview deployments, CDN y observabilidad con configuración mínima.", "rendimiento", "plataforma", ["Next.js", "Web"], ["Deploy", "CDN"], "Propietaria", "freemium"),
   r("Core Web Vitals", "core-web-vitals", "https://web.dev/vitals", "Métricas de experiencia real: LCP, INP y CLS.", "Define objetivos medibles para que el diseño no sacrifique usabilidad.", "rendimiento", "metrica", ["Web"], ["LCP", "INP", "CLS"], "Estándar web"),
+  r("Web Quality Skills", "web-quality-skills", "https://github.com/addyosmani/web-quality-skills", "Agent Skills para Lighthouse, Core Web Vitals, WCAG 2.2, SEO y buenas prácticas.", "Convierte la calidad web en un flujo reutilizable para Claude Code, Codex y otros agentes.", "rendimiento", "skill", ["Agnóstico", "Claude Code", "Codex"], ["Agentes", "Lighthouse", "WCAG", "SEO"], "MIT", "gratis", true),
   r("prefers-reduced-motion", "prefers-reduced-motion", "https://developer.mozilla.org/docs/Web/CSS/@media/prefers-reduced-motion", "Preferencia del sistema para reducir movimiento.", "Hace que animaciones modernas sean inclusivas por defecto.", "accesibilidad", "feature", ["Web"], ["CSS", "Motion"], "Estándar web"),
   r("Lucide", "lucide", "https://lucide.dev", "Iconos SVG consistentes y personalizables.", "Cobertura amplia, peso visual coherente y buen soporte React.", "accesibilidad", "libreria", ["React", "Vue", "Svelte"], ["Iconos", "SVG"], "ISC"),
   r("Fontsource", "fontsource", "https://fontsource.org", "Fuentes open source empaquetadas para autoalojamiento.", "Controla privacidad, rendimiento y versiones tipográficas.", "accesibilidad", "libreria", ["Web"], ["Fuentes", "Privacidad"], "MIT"),

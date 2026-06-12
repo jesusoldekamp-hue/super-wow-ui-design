@@ -18,7 +18,9 @@ Read `AGENTS.md`, `docs/AI_WORKFLOW.md`, `docs/STACK.md`, and `docs/QUALITY_BAR.
 3. Define a visual system with typography, spacing, color, surface, and motion rules.
 4. Reuse `@workspace/ui` and import advanced effects from `@workspace/effects`.
 5. Keep server rendering as the default and isolate client effects.
-6. Test desktop, mobile, keyboard navigation, reduced motion, and production build.
-7. Run `corepack pnpm ready` before reporting completion.
+6. Invoke `web-quality-audit`, then use `performance`, `core-web-vitals`,
+   `accessibility`, `seo`, or `best-practices` for any findings.
+7. Test desktop, mobile, keyboard navigation, reduced motion, and production build.
+8. Run `corepack pnpm ready` before reporting completion.
 
 Use `/plantillas/cinematic` as an implementation reference for GSAP, SplitText, MorphSVG, Lenis, Motion, and React Three Fiber. Learn from premium product sites without reproducing their protected identity or assets.

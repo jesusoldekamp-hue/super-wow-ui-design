@@ -33,7 +33,8 @@ Starter operativo para que Claude Code, Codex y desarrolladores construyan inter
 - Registry compatible con shadcn.
 - SEO, JSON-LD, sitemap, Vercel Analytics y Speed Insights.
 - Instrucciones nativas para Claude Code y Codex.
-- 40 recursos modernos, mantenidos y sin alternativas redundantes.
+- Seis Web Quality Skills de Addy Osmani para Lighthouse, Core Web Vitals, WCAG 2.2, SEO y buenas prácticas.
+- ${resources.length} recursos modernos, mantenidos y sin alternativas redundantes.
 
 ## Inicio rápido
 
@@ -62,6 +63,7 @@ Instalar el conocimiento para agentes o el pack avanzado desde GitHub:
 
 \`\`\`bash
 pnpm dlx shadcn@latest add jesusoldekamp-hue/awesome-modern-ui/agent-workflow
+pnpm dlx shadcn@latest add jesusoldekamp-hue/awesome-modern-ui/web-quality-skills
 pnpm dlx shadcn@latest add jesusoldekamp-hue/awesome-modern-ui/advanced-effects
 \`\`\`
 
@@ -77,6 +79,15 @@ GSAP, ScrollTrigger, SplitText, MorphSVG, Lenis, Three.js y React Three Fiber ya
 - [Stack e imports](./docs/STACK.md)
 - [Barra de calidad](./docs/QUALITY_BAR.md)
 - [Plantilla de brief](./docs/BRIEF_TEMPLATE.md)
+- [Web Quality Skills](./docs/WEB_QUALITY_SKILLS.md)
+
+Las skills \`web-quality-audit\`, \`performance\`, \`core-web-vitals\`,
+\`accessibility\`, \`seo\` y \`best-practices\` ya están incluidas para Claude
+Code y Codex. Se actualizan desde el repositorio original con:
+
+\`\`\`bash
+corepack pnpm quality:skills:update
+\`\`\`
 
 ## Calidad
 
@@ -92,6 +103,8 @@ Proyecto original de [Jesus Sagaon](https://github.com/jesusoldekamp-hue). Inspi
 ## Licencia
 
 Código propio bajo [MIT](./LICENSE). Los recursos enlazados conservan las licencias de sus respectivos autores.
+Las Web Quality Skills incluidas conservan la licencia MIT y atribución de Addy
+Osmani en [THIRD_PARTY_NOTICES.md](./THIRD_PARTY_NOTICES.md).
 `
 
 await writeFile(resolve(process.cwd(), "../../README.md"), readme)

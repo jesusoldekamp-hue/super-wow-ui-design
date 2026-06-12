@@ -16,7 +16,27 @@ const requiredFiles = [
   "packages/effects/src/scroll-story.tsx",
   "packages/effects/src/split-text-reveal.tsx",
   "packages/ui/src/components/liquid-glass.tsx",
+  "docs/WEB_QUALITY_SKILLS.md",
+  "THIRD_PARTY_NOTICES.md",
+  "third_party/web-quality-skills/LICENSE",
+  "third_party/web-quality-skills/source.json",
 ]
+
+const qualitySkills = [
+  "web-quality-audit",
+  "performance",
+  "core-web-vitals",
+  "accessibility",
+  "seo",
+  "best-practices",
+]
+
+for (const skill of qualitySkills) {
+  requiredFiles.push(
+    `.codex/skills/${skill}/SKILL.md`,
+    `.claude/skills/${skill}/SKILL.md`,
+  )
+}
 
 const requiredDependencies = [
   "@gsap/react",
@@ -50,6 +70,23 @@ if (missingFiles.length || missingDependencies.length) {
   process.exit(1)
 }
 
+const divergentSkills = []
+for (const skill of qualitySkills) {
+  const [codexSkill, claudeSkill] = await Promise.all([
+    readFile(`.codex/skills/${skill}/SKILL.md`, "utf8"),
+    readFile(`.claude/skills/${skill}/SKILL.md`, "utf8"),
+  ])
+
+  if (codexSkill !== claudeSkill) divergentSkills.push(skill)
+}
+
+if (divergentSkills.length) {
+  console.error(
+    `Skills distintas entre Codex y Claude:\n- ${divergentSkills.join("\n- ")}`,
+  )
+  process.exit(1)
+}
+
 console.log(
-  `Starter listo para agentes: ${requiredFiles.length} archivos y ${requiredDependencies.length} capacidades avanzadas verificadas.`,
+  `Starter listo para agentes: ${requiredFiles.length} archivos, ${requiredDependencies.length} capacidades avanzadas y ${qualitySkills.length} skills de calidad verificadas.`,
 )

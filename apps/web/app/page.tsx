@@ -77,7 +77,7 @@ export default function Page() {
             {highlighted.map((item) => <ResourceCard key={item.slug} item={item} />)}
           </div>
           <div className="mt-5 text-center">
-            <Button asChild variant="outline"><Link href="/recursos">Ver los 40 recursos <ArrowRight data-icon="inline-end" /></Link></Button>
+            <Button asChild variant="outline"><Link href="/recursos">Ver los {resources.length} recursos <ArrowRight data-icon="inline-end" /></Link></Button>
           </div>
         </Reveal>
       </section>

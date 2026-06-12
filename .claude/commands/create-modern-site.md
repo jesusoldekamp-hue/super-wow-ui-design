@@ -11,6 +11,8 @@ Proceso obligatorio:
 5. Usa componentes de `@workspace/ui` y efectos de `@workspace/effects`; no instales alternativas duplicadas.
 6. Añade movimiento solo donde mejore jerarquía, continuidad o explicación.
 7. Verifica teclado, contraste, `prefers-reduced-motion`, móvil y ausencia de overflow.
-8. Ejecuta `corepack pnpm ready`. No termines con errores conocidos.
+8. Aplica la skill `web-quality-audit` y corrige los hallazgos relevantes con
+   `performance`, `core-web-vitals`, `accessibility`, `seo` o `best-practices`.
+9. Ejecuta `corepack pnpm ready`. No termines con errores conocidos.
 
 Entrega al usuario un resumen breve de archivos, decisiones visuales y resultados de verificación.

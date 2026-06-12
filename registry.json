@@ -25,9 +25,74 @@
           "target": "~/.claude/commands/create-modern-site.md"
         },
         {
+          "path": ".claude/commands/audit-web-quality.md",
+          "type": "registry:file",
+          "target": "~/.claude/commands/audit-web-quality.md"
+        },
+        {
           "path": ".codex/skills/modern-ui/SKILL.md",
           "type": "registry:file",
           "target": "~/.codex/skills/modern-ui/SKILL.md"
+        },
+        {
+          "path": ".codex/skills/web-quality-audit/SKILL.md",
+          "type": "registry:file",
+          "target": "~/.codex/skills/web-quality-audit/SKILL.md"
+        },
+        {
+          "path": ".codex/skills/performance/SKILL.md",
+          "type": "registry:file",
+          "target": "~/.codex/skills/performance/SKILL.md"
+        },
+        {
+          "path": ".codex/skills/core-web-vitals/SKILL.md",
+          "type": "registry:file",
+          "target": "~/.codex/skills/core-web-vitals/SKILL.md"
+        },
+        {
+          "path": ".codex/skills/accessibility/SKILL.md",
+          "type": "registry:file",
+          "target": "~/.codex/skills/accessibility/SKILL.md"
+        },
+        {
+          "path": ".codex/skills/seo/SKILL.md",
+          "type": "registry:file",
+          "target": "~/.codex/skills/seo/SKILL.md"
+        },
+        {
+          "path": ".codex/skills/best-practices/SKILL.md",
+          "type": "registry:file",
+          "target": "~/.codex/skills/best-practices/SKILL.md"
+        },
+        {
+          "path": ".claude/skills/web-quality-audit/SKILL.md",
+          "type": "registry:file",
+          "target": "~/.claude/skills/web-quality-audit/SKILL.md"
+        },
+        {
+          "path": ".claude/skills/performance/SKILL.md",
+          "type": "registry:file",
+          "target": "~/.claude/skills/performance/SKILL.md"
+        },
+        {
+          "path": ".claude/skills/core-web-vitals/SKILL.md",
+          "type": "registry:file",
+          "target": "~/.claude/skills/core-web-vitals/SKILL.md"
+        },
+        {
+          "path": ".claude/skills/accessibility/SKILL.md",
+          "type": "registry:file",
+          "target": "~/.claude/skills/accessibility/SKILL.md"
+        },
+        {
+          "path": ".claude/skills/seo/SKILL.md",
+          "type": "registry:file",
+          "target": "~/.claude/skills/seo/SKILL.md"
+        },
+        {
+          "path": ".claude/skills/best-practices/SKILL.md",
+          "type": "registry:file",
+          "target": "~/.claude/skills/best-practices/SKILL.md"
         },
         {
           "path": "docs/AI_WORKFLOW.md",
@@ -48,6 +113,119 @@
           "path": "docs/STACK.md",
           "type": "registry:file",
           "target": "~/docs/STACK.md"
+        },
+        {
+          "path": "docs/WEB_QUALITY_SKILLS.md",
+          "type": "registry:file",
+          "target": "~/docs/WEB_QUALITY_SKILLS.md"
+        },
+        {
+          "path": "THIRD_PARTY_NOTICES.md",
+          "type": "registry:file",
+          "target": "~/THIRD_PARTY_NOTICES.md"
+        },
+        {
+          "path": "third_party/web-quality-skills/LICENSE",
+          "type": "registry:file",
+          "target": "~/third_party/web-quality-skills/LICENSE"
+        },
+        {
+          "path": "third_party/web-quality-skills/source.json",
+          "type": "registry:file",
+          "target": "~/third_party/web-quality-skills/source.json"
+        }
+      ]
+    },
+    {
+      "name": "web-quality-skills",
+      "type": "registry:item",
+      "title": "Web Quality Skills",
+      "description": "Seis Agent Skills MIT de Addy Osmani para Lighthouse, Core Web Vitals, WCAG 2.2, SEO y buenas prácticas.",
+      "files": [
+        {
+          "path": ".codex/skills/web-quality-audit/SKILL.md",
+          "type": "registry:file",
+          "target": "~/.codex/skills/web-quality-audit/SKILL.md"
+        },
+        {
+          "path": ".codex/skills/performance/SKILL.md",
+          "type": "registry:file",
+          "target": "~/.codex/skills/performance/SKILL.md"
+        },
+        {
+          "path": ".codex/skills/core-web-vitals/SKILL.md",
+          "type": "registry:file",
+          "target": "~/.codex/skills/core-web-vitals/SKILL.md"
+        },
+        {
+          "path": ".codex/skills/accessibility/SKILL.md",
+          "type": "registry:file",
+          "target": "~/.codex/skills/accessibility/SKILL.md"
+        },
+        {
+          "path": ".codex/skills/seo/SKILL.md",
+          "type": "registry:file",
+          "target": "~/.codex/skills/seo/SKILL.md"
+        },
+        {
+          "path": ".codex/skills/best-practices/SKILL.md",
+          "type": "registry:file",
+          "target": "~/.codex/skills/best-practices/SKILL.md"
+        },
+        {
+          "path": ".claude/skills/web-quality-audit/SKILL.md",
+          "type": "registry:file",
+          "target": "~/.claude/skills/web-quality-audit/SKILL.md"
+        },
+        {
+          "path": ".claude/skills/performance/SKILL.md",
+          "type": "registry:file",
+          "target": "~/.claude/skills/performance/SKILL.md"
+        },
+        {
+          "path": ".claude/skills/core-web-vitals/SKILL.md",
+          "type": "registry:file",
+          "target": "~/.claude/skills/core-web-vitals/SKILL.md"
+        },
+        {
+          "path": ".claude/skills/accessibility/SKILL.md",
+          "type": "registry:file",
+          "target": "~/.claude/skills/accessibility/SKILL.md"
+        },
+        {
+          "path": ".claude/skills/seo/SKILL.md",
+          "type": "registry:file",
+          "target": "~/.claude/skills/seo/SKILL.md"
+        },
+        {
+          "path": ".claude/skills/best-practices/SKILL.md",
+          "type": "registry:file",
+          "target": "~/.claude/skills/best-practices/SKILL.md"
+        },
+        {
+          "path": ".claude/commands/audit-web-quality.md",
+          "type": "registry:file",
+          "target": "~/.claude/commands/audit-web-quality.md"
+        },
+        {
+          "path": "docs/WEB_QUALITY_SKILLS.md",
+          "type": "registry:file",
+          "target": "~/docs/WEB_QUALITY_SKILLS.md"
+        },
+        {
+          "path": "THIRD_PARTY_NOTICES.md",
+          "type": "registry:file",
+          "target": "~/THIRD_PARTY_NOTICES.md"
+        },
+        {
+          "path": "third_party/web-quality-skills/LICENSE",
+          "type": "registry:file",
+          "target": "~/third_party/web-quality-skills/LICENSE"
+        },
+        {
+          "path": "third_party/web-quality-skills/source.json",
+          "type": "registry:file",
+          "target": "~/third_party/web-quality-skills/source.json"
         }
       ]
     },
