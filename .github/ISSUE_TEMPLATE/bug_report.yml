@@ -1,0 +1,37 @@
+name: Reportar problema
+description: Reporta un error en la web, el catálogo o la documentación.
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Qué está fallando
+      description: Describe el problema con pasos concretos.
+      placeholder: En /recursos el filtro de animación...
+    validations:
+      required: true
+  - type: input
+    id: url
+    attributes:
+      label: URL o archivo relacionado
+      placeholder: https://awesome-modern-ui.vercel.app/recursos
+  - type: textarea
+    id: expected
+    attributes:
+      label: Qué debería pasar
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Área
+      options:
+        - Web
+        - Catálogo
+        - README
+        - Registry
+        - Accesibilidad
+        - Performance
+    validations:
+      required: true

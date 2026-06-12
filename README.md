@@ -7,43 +7,46 @@
 <h1 align="center">Awesome Modern UI</h1>
 
 <p align="center">
-  Directorio visual de herramientas para diseñar páginas web y aplicaciones modernas.
+  Directorio visual y curado para diseñar páginas web, apps y productos digitales modernos.
 </p>
 
 <p align="center">
-  <a href="https://awesome-modern-ui.vercel.app"><strong>Explorar la web</strong></a>
-  ·
-  <a href="https://awesome-modern-ui.vercel.app/recursos">Ver recursos</a>
-  ·
-  <a href="https://awesome-modern-ui.vercel.app/plantillas">Ver diseños</a>
-  ·
-  <a href="https://awesome-modern-ui.vercel.app/componentes">Ver componentes</a>
+  <a href="https://awesome-modern-ui.vercel.app"><img alt="Explorar web" src="https://img.shields.io/badge/Explorar_web-6d5dfc?style=for-the-badge&labelColor=090d19"></a>
+  <a href="https://awesome-modern-ui.vercel.app/recursos"><img alt="Recursos" src="https://img.shields.io/badge/Recursos-22d3ee?style=for-the-badge&labelColor=090d19"></a>
+  <a href="https://awesome-modern-ui.vercel.app/plantillas"><img alt="Diseños" src="https://img.shields.io/badge/Disenos-c084fc?style=for-the-badge&labelColor=090d19"></a>
+  <a href="https://awesome-modern-ui.vercel.app/componentes"><img alt="Componentes" src="https://img.shields.io/badge/Componentes-ec4899?style=for-the-badge&labelColor=090d19"></a>
 </p>
 
 <p align="center">
-  <img alt="41 recursos" src="https://img.shields.io/badge/recursos-41-6d5dfc">
-  <img alt="8 categorías" src="https://img.shields.io/badge/categorías-8-22d3ee">
-  <img alt="Licencia MIT" src="https://img.shields.io/badge/licencia-MIT-34d399">
+  <img alt="41 recursos" src="https://img.shields.io/badge/41_recursos-curados-6d5dfc?style=flat-square">
+  <img alt="8 categorías" src="https://img.shields.io/badge/8_categorias-visuales-22d3ee?style=flat-square">
+  <img alt="Next.js" src="https://img.shields.io/badge/Next.js-16-black?style=flat-square&logo=nextdotjs">
+  <img alt="Licencia MIT" src="https://img.shields.io/badge/licencia-MIT-34d399?style=flat-square">
 </p>
 
-## Qué encontrarás
+## Vista rápida
 
-- Herramientas para UI, animación, 3D, accesibilidad, rendimiento y SEO.
-- Referencias visuales para landings, dashboards, portfolios y productos digitales.
-- Una ficha por recurso con descripción, recomendación, licencia, precio y sitio oficial.
-- Imágenes locales para que el catálogo también sea visual dentro de GitHub.
-- Una selección corta: solo recursos útiles para crear mejores webs y apps.
+| Curado | Visual | Moderno | Listo para usar |
+| --- | --- | --- | --- |
+| 41 recursos útiles, no una lista infinita. | Portadas SVG locales para navegar desde GitHub. | UI, motion, 3D, SEO, performance y accesibilidad. | Web desplegada, filtros, fichas y README generado. |
+
+<p align="center">
+  <code>Next.js 16</code> <code>React 19</code> <code>Tailwind CSS 4</code> <code>Motion</code> <code>shadcn/ui</code> <code>Radix UI</code> <code>Three.js</code> <code>GSAP</code>
+</p>
+
+## Por qué existe
+
+Este repo no intenta guardar todo. Guarda lo que sí vale la pena tener a mano cuando vas a construir interfaces modernas: herramientas mantenidas, documentadas y con utilidad clara para landings, portfolios, dashboards, SaaS y sitios creativos.
+
+## Qué lo hace diferente
+
+| Selección estricta | Galería visual | Datos tipados | Calidad continua |
+| --- | --- | --- | --- |
+| Entran recursos con valor real para diseño web y app. | Cada ficha tiene portada local y enlace oficial. | El catálogo vive en una sola fuente: `apps/web/lib/catalog.ts`. | CI valida catálogo, registry, lint, tipos, pruebas y build. |
 
 ## Explorar por categoría
 
-- [Stack moderno](#stack) · 5
-- [Componentes y UI](#componentes) · 6
-- [Animación](#animacion) · 10
-- [3D](#3d) · 3
-- [Rendimiento](#rendimiento) · 5
-- [Accesibilidad](#accesibilidad) · 3
-- [SEO y analítica](#seo-analitica) · 3
-- [Patrones e inspiración](#patrones) · 6
+<a href="#stack"><img alt="Stack moderno" src="https://img.shields.io/badge/Stack%20moderno-5-111827?style=for-the-badge&labelColor=060913&color=6d5dfc"></a> <a href="#componentes"><img alt="Componentes y UI" src="https://img.shields.io/badge/Componentes%20y%20UI-6-111827?style=for-the-badge&labelColor=060913&color=6d5dfc"></a> <a href="#animacion"><img alt="Animación" src="https://img.shields.io/badge/Animaci%C3%B3n-10-111827?style=for-the-badge&labelColor=060913&color=6d5dfc"></a> <a href="#3d"><img alt="3D" src="https://img.shields.io/badge/3D-3-111827?style=for-the-badge&labelColor=060913&color=6d5dfc"></a> <a href="#rendimiento"><img alt="Rendimiento" src="https://img.shields.io/badge/Rendimiento-5-111827?style=for-the-badge&labelColor=060913&color=6d5dfc"></a> <a href="#accesibilidad"><img alt="Accesibilidad" src="https://img.shields.io/badge/Accesibilidad-3-111827?style=for-the-badge&labelColor=060913&color=6d5dfc"></a> <a href="#seo-analitica"><img alt="SEO y analítica" src="https://img.shields.io/badge/SEO%20y%20anal%C3%ADtica-3-111827?style=for-the-badge&labelColor=060913&color=6d5dfc"></a> <a href="#patrones"><img alt="Patrones e inspiración" src="https://img.shields.io/badge/Patrones%20e%20inspiraci%C3%B3n-6-111827?style=for-the-badge&labelColor=060913&color=6d5dfc"></a>
 
 ## Recursos destacados
 
@@ -161,9 +164,21 @@ La web incluye ejemplos completos para ver cómo se combinan estas herramientas:
 - [Experiencia inmersiva](https://awesome-modern-ui.vercel.app/plantillas/cinematic)
 - [Bloques de interfaz](https://awesome-modern-ui.vercel.app/componentes)
 
+## Estructura
+
+```txt
+apps/web                 Next.js app, galería y documentación
+apps/web/lib/catalog.ts  Fuente tipada del catálogo
+apps/web/public          Portadas SVG y assets públicos
+packages/ui              Componentes compartidos
+packages/effects         Utilidades de animación y motion safety
+registry.json            Bloques compatibles con shadcn registry
+```
+
 ## Ejecutar la web
 
 ```bash
+corepack enable
 corepack pnpm install
 corepack pnpm dev
 ```
@@ -183,13 +198,15 @@ El catálogo, las portadas y este README se generan desde
 
 ## Contribuir
 
-Abre un issue o pull request en [https://github.com/jesusoldekamp-hue/awesome-modern-ui](https://github.com/jesusoldekamp-hue/awesome-modern-ui) con:
+Abre un issue o pull request en [https://github.com/jesusoldekamp-hue/awesome-modern-ui](https://github.com/jesusoldekamp-hue/awesome-modern-ui). Para que un recurso entre debe incluir:
 
 - enlace oficial;
 - licencia y precio;
 - motivo concreto para recomendarlo;
 - evidencia de mantenimiento activo;
 - categoría adecuada y alternativas que reemplazaría.
+
+No se aceptan recursos abandonados, duplicados o premium sin valor claro para construir mejores interfaces.
 
 ## Créditos
 

@@ -1,24 +1,68 @@
-name: Proponer recurso
-description: Sugiere una herramienta que mejore la selección actual.
+name: Proponer recurso moderno
+description: Sugiere una herramienta que mejore la selección visual del catálogo.
 title: "[Recurso]: "
 labels: ["resource"]
 body:
   - type: input
     id: name
     attributes:
-      label: Nombre y URL oficial
+      label: Nombre
+      placeholder: Motion, Lenis, Three.js...
+    validations:
+      required: true
+  - type: input
+    id: url
+    attributes:
+      label: URL oficial
+      placeholder: https://...
+    validations:
+      required: true
+  - type: dropdown
+    id: category
+    attributes:
+      label: Categoría
+      options:
+        - Stack moderno
+        - Componentes y UI
+        - Animación
+        - 3D
+        - Rendimiento
+        - Accesibilidad
+        - SEO y analítica
+        - Patrones e inspiración
     validations:
       required: true
   - type: textarea
     id: reason
     attributes:
       label: Qué resuelve y por qué debe entrar
+      description: Explica por qué mejora la selección actual y qué alternativa reemplazaría.
     validations:
       required: true
   - type: input
     id: license
     attributes:
-      label: Licencia y precio
+      label: Licencia
+      placeholder: MIT, Apache-2.0, comercial...
+    validations:
+      required: true
+  - type: dropdown
+    id: pricing
+    attributes:
+      label: Precio
+      options:
+        - Gratis
+        - Open source
+        - Freemium
+        - Pago
+        - Comercial
+    validations:
+      required: true
+  - type: input
+    id: frameworks
+    attributes:
+      label: Frameworks
+      placeholder: React, Next.js, agnóstico...
     validations:
       required: true
   - type: checkboxes
@@ -29,4 +73,6 @@ body:
         - label: Está mantenido y tiene documentación oficial.
           required: true
         - label: No duplica claramente un recurso existente.
+          required: true
+        - label: Tiene utilidad directa para diseñar webs o apps modernas.
           required: true

@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Ver la galería desplegada
+    url: https://awesome-modern-ui.vercel.app
+    about: Revisa la versión pública antes de abrir un issue.

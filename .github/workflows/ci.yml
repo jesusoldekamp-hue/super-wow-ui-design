@@ -1,15 +1,19 @@
-name: CI
+name: Quality
 
 on:
   push:
     branches: [main]
   pull_request:
 
+permissions:
+  contents: read
+
 jobs:
   quality:
+    name: Catalog, tests and build
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - uses: pnpm/action-setup@v6
         with:
           version: 10.33.4
@@ -18,9 +22,13 @@ jobs:
           node-version: 22
           cache: pnpm
       - run: pnpm install --frozen-lockfile
-      - run: pnpm catalog:validate
+      - run: pnpm resources:images
       - run: pnpm registry:generate
+      - run: pnpm readme:generate
+      - run: pnpm catalog:validate
       - run: pnpm lint
       - run: pnpm typecheck
       - run: pnpm test
       - run: pnpm build
+      - name: Verify generated files are committed
+        run: git diff --exit-code
