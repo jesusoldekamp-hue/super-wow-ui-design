@@ -83,15 +83,15 @@ function StageCard({
             fill
             priority={index === 0}
             sizes="(min-width: 1024px) 55vw, 100vw"
-            className="object-cover transition-transform duration-700 group-hover:scale-[1.035]"
+            className="object-cover brightness-110 contrast-105 transition-transform duration-700 group-hover:scale-[1.035]"
           />
-          <span className="absolute inset-0 bg-gradient-to-t from-black/76 via-black/10 to-white/15" />
+          <span className="absolute inset-0 bg-gradient-to-t from-black/58 via-black/0 to-white/20" />
           <motion.span
             aria-hidden
             className="pointer-events-none absolute -inset-14 rounded-[2rem] bg-[radial-gradient(circle,rgba(255,255,255,.28),transparent_34%)] blur-2xl"
             style={shouldReduceMotion ? undefined : { x: shineX, y: shineY }}
           />
-          <span className="absolute inset-x-0 bottom-0 h-1/2 bg-[linear-gradient(180deg,transparent,rgba(99,102,241,.22),rgba(0,0,0,.78))]" />
+          <span className="absolute inset-x-0 bottom-0 h-1/2 bg-[linear-gradient(180deg,transparent,rgba(99,102,241,.2),rgba(0,0,0,.62))]" />
         </div>
 
         <div className="absolute inset-0 flex flex-col justify-between p-3">
@@ -120,7 +120,7 @@ export function LiquidResourceStage({ items }: { items: Resource[] }) {
   return (
     <LiquidGlass
       className="rounded-[2rem] p-3 sm:p-4"
-      contentClassName="relative overflow-hidden"
+      contentClassName="relative"
       style={{ "--glass-x": "16%", "--glass-y": "4%" }}
     >
       <motion.span
