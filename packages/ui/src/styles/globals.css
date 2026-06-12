@@ -227,7 +227,6 @@ body {
 }
 
 .site-nav-shell {
-  border: 1px solid color-mix(in oklch, var(--border) 84%, transparent);
   background:
     linear-gradient(110deg, color-mix(in oklch, white 7%, transparent), transparent 38%),
     color-mix(in oklch, var(--background) 84%, transparent);
@@ -245,7 +244,7 @@ body {
 .site-nav-outline-base,
 .site-nav-outline-progress {
   fill: none;
-  vector-effect: non-scaling-stroke;
+  shape-rendering: geometricPrecision;
 }
 
 .site-nav-outline-base {
@@ -257,7 +256,7 @@ body {
   stroke: url("#site-nav-progress-gradient");
   stroke-dasharray: 1;
   stroke-dashoffset: 0;
-  stroke-linecap: round;
+  stroke-linecap: butt;
   stroke-width: 2;
   opacity: 0.92;
   filter:
@@ -269,6 +268,7 @@ body {
   .site-nav-outline-progress {
     animation: nav-border-progress linear both;
     animation-timeline: scroll(root);
+    animation-range: 0% 100%;
   }
 }
 

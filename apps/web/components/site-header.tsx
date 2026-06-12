@@ -11,6 +11,7 @@ import {
 } from "@workspace/ui/components/sheet"
 
 import { ThemeToggle } from "./theme-toggle"
+import { SiteNavOutline } from "./site-nav-outline"
 
 const links = [
   ["Componentes", "/componentes"],
@@ -23,39 +24,7 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-40 px-3 pt-3 sm:px-4">
       <div className="site-nav-shell relative isolate mx-auto flex h-16 max-w-7xl items-center justify-between overflow-hidden rounded-2xl px-5 lg:px-8">
-        <svg
-          aria-hidden="true"
-          className="site-nav-outline pointer-events-none absolute inset-0 size-full"
-          preserveAspectRatio="none"
-          viewBox="0 0 1000 64"
-        >
-          <defs>
-            <linearGradient id="site-nav-progress-gradient" x1="0" x2="1" y1="0" y2="1">
-              <stop offset="0" stopColor="#6d5dfc" />
-              <stop offset="0.48" stopColor="#8b5cf6" />
-              <stop offset="0.76" stopColor="#22d3ee" />
-              <stop offset="1" stopColor="#34d399" />
-            </linearGradient>
-          </defs>
-          <rect
-            className="site-nav-outline-base"
-            height="62"
-            rx="16"
-            width="998"
-            x="1"
-            y="1"
-          />
-          <rect
-            className="site-nav-outline-progress"
-            data-testid="nav-scroll-progress"
-            height="62"
-            pathLength="1"
-            rx="16"
-            width="998"
-            x="1"
-            y="1"
-          />
-        </svg>
+        <SiteNavOutline />
         <Link href="/" className="flex items-center gap-3 font-semibold">
           <span className="grid size-8 place-items-center rounded-lg bg-gradient-to-br from-blue-500 to-violet-600 text-sm text-white shadow-lg shadow-violet-500/20">
             A

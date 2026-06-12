@@ -12,11 +12,50 @@ test("navega por la experiencia principal", async ({ page }) => {
 
 test("el marco del navbar refleja el progreso de scroll", async ({ page }) => {
   await page.goto("/")
+  await page.evaluate(() => window.scrollTo(0, 0))
+
   const progress = page.getByTestId("nav-scroll-progress")
 
-  const initialOffset = await progress.evaluate((element) =>
-    Number.parseFloat(getComputedStyle(element).strokeDashoffset),
-  )
+  await expect
+    .poll(() =>
+      progress.evaluate((element) =>
+        Number.parseFloat(getComputedStyle(element).strokeDashoffset),
+      ),
+    )
+    .toBeGreaterThan(0.99)
+
+  const alignment = await progress.evaluate((element) => {
+    if (!(element instanceof SVGPathElement)) return null
+
+    const outline = element.ownerSVGElement
+    const shell = outline?.parentElement
+    if (!outline || !shell) return null
+
+    const shellBox = shell.getBoundingClientRect()
+    const outlineBox = outline.getBoundingClientRect()
+    const start = element.getPointAtLength(0)
+    const afterStart = element.getPointAtLength(element.getTotalLength() * 0.02)
+    const end = element.getPointAtLength(element.getTotalLength())
+
+    return {
+      outline: {
+        x: outlineBox.x - shellBox.x,
+        y: outlineBox.y - shellBox.y,
+        width: outlineBox.width - shellBox.width,
+        height: outlineBox.height - shellBox.height,
+      },
+      start: { x: start.x, y: start.y },
+      afterStart: { movesRight: afterStart.x > start.x, y: afterStart.y },
+      end: { x: end.x, y: end.y },
+    }
+  })
+
+  expect(alignment).toEqual({
+    outline: { x: 0, y: 0, width: 0, height: 0 },
+    start: { x: 42, y: 1 },
+    afterStart: { movesRight: true, y: 1 },
+    end: { x: 42, y: 1 },
+  })
 
   await page.evaluate(() => {
     document.documentElement.style.scrollBehavior = "auto"
@@ -29,7 +68,7 @@ test("el marco del navbar refleja el progreso de scroll", async ({ page }) => {
         Number.parseFloat(getComputedStyle(element).strokeDashoffset),
       ),
     )
-    .toBeLessThan(initialOffset)
+    .toBeLessThan(0.01)
 })
 
 test("abre las cuatro plantillas", async ({ page }) => {
