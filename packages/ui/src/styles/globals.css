@@ -281,6 +281,33 @@ body {
   mix-blend-mode: soft-light;
 }
 
+@keyframes template-orbit {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes template-marquee {
+  to { transform: translateX(-50%); }
+}
+
+.template-orbit {
+  animation: template-orbit 18s linear infinite;
+}
+
+.template-orbit--reverse {
+  animation-direction: reverse;
+  animation-duration: 13s;
+}
+
+.template-marquee {
+  overflow: hidden;
+}
+
+.template-marquee-track {
+  display: flex;
+  width: max-content;
+  animation: template-marquee 24s linear infinite;
+}
+
 @keyframes cinematic-reveal {
   from {
     clip-path: inset(0 100% 0 0);

@@ -2,9 +2,9 @@ import { ArrowRight, BarChart3, BriefcaseBusiness, Orbit, PanelsTopLeft } from "
 import Link from "next/link"
 
 const templates = [
-  { slug: "landing", name: "Landing", text: "Marketing moderna con secciones esenciales.", icon: PanelsTopLeft },
-  { slug: "dashboard", name: "Dashboard", text: "Panel de control completo y responsivo.", icon: BarChart3 },
-  { slug: "portfolio", name: "Portfolio", text: "Portafolio personal minimalista y elegante.", icon: BriefcaseBusiness },
+  { slug: "landing", name: "Landing Signal", text: "Lanzamiento inmersivo orientado a conversión.", icon: PanelsTopLeft },
+  { slug: "dashboard", name: "Dashboard Command", text: "Inteligencia operativa visual y cinematográfica.", icon: BarChart3 },
+  { slug: "portfolio", name: "Portfolio Editorial", text: "Proyectos narrados con escala y carácter.", icon: BriefcaseBusiness },
   { slug: "cinematic", name: "Cinematic", text: "Storytelling premium con scroll, SVG y WebGL.", icon: Orbit },
 ]
 

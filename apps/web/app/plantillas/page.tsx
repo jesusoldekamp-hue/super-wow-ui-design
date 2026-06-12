@@ -7,17 +7,17 @@ import { Button } from "@workspace/ui/components/button"
 export const metadata: Metadata = { title: "Plantillas" }
 
 const templates = [
-  ["landing", "Landing", "Una página de marketing completa con hero, beneficios, pricing, FAQ y CTA.", PanelsTopLeft],
-  ["dashboard", "Dashboard", "Shell de producto con sidebar, métricas, tabla y ajustes.", BarChart3],
-  ["portfolio", "Portfolio", "Presentación editorial de proyectos, experiencia y contacto.", BriefcaseBusiness],
+  ["landing", "Landing Signal", "Lanzamiento cinematográfico con narrativa, señal visual, prueba y conversión.", PanelsTopLeft],
+  ["dashboard", "Dashboard Command", "Centro de inteligencia vivo con datos, sistemas y observabilidad.", BarChart3],
+  ["portfolio", "Portfolio Editorial", "Portfolio inmersivo con tipografía monumental y proyectos narrativos.", BriefcaseBusiness],
   ["cinematic", "Cinematic", "Narrativa de producto con GSAP, SplitText, MorphSVG, Lenis, Motion y WebGL.", Orbit],
 ] as const
 
 export default function TemplatesPage() {
   return (
     <main className="mx-auto max-w-7xl px-5 py-14 lg:px-8">
-      <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">Cuatro puntos de partida completos</h1>
-      <p className="mt-4 max-w-2xl text-lg text-muted-foreground">No son screenshots: cada plantilla es responsiva, navegable y está construida con los mismos componentes del kit.</p>
+      <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">Cuatro experiencias cinematográficas</h1>
+      <p className="mt-4 max-w-2xl text-lg text-muted-foreground">Narrativas completas con dirección visual propia, movimiento avanzado, glass, scroll y composición responsive.</p>
       <div className="mt-10 grid gap-5 md:grid-cols-2">
         {templates.map(([slug, name, description, Icon]) => (
           <article key={slug} className="glass flex min-h-96 flex-col rounded-2xl p-6">

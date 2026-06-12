@@ -33,9 +33,17 @@ test("el marco del navbar refleja el progreso de scroll", async ({ page }) => {
 })
 
 test("abre las cuatro plantillas", async ({ page }) => {
-  for (const slug of ["landing", "dashboard", "portfolio", "cinematic"]) {
+  const templates = {
+    landing: "No lances una página. Lanza una señal.",
+    dashboard: "Controla el sistema. No persigas los datos.",
+    portfolio: "Trabajo que deja una impresión.",
+    cinematic: "Construye lo que todavía no existe.",
+  }
+
+  for (const [slug, heading] of Object.entries(templates)) {
     await page.goto(`/plantillas/${slug}`)
     await expect(page.getByRole("heading", { name: slug, exact: true })).toBeVisible()
+    await expect(page.getByRole("heading", { name: heading })).toBeVisible()
   }
 })
 
