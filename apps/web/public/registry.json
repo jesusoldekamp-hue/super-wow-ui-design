@@ -4,16 +4,46 @@
   "homepage": "https://awesome-modern-ui.vercel.app",
   "items": [
     {
+      "name": "liquid-hero",
+      "type": "registry:block",
+      "title": "Liquid Hero",
+      "description": "Hero cinematic con liquid glass, profundidad y preview de producto."
+    },
+    {
+      "name": "liquid-bento",
+      "type": "registry:block",
+      "title": "Liquid Bento",
+      "description": "Grid bento con tarjetas liquid, iconos y jerarquía editorial."
+    },
+    {
+      "name": "liquid-dashboard-shell",
+      "type": "registry:block",
+      "title": "Liquid Dashboard Shell",
+      "description": "Shell de dashboard con métricas, navegación y gráficos visuales."
+    },
+    {
+      "name": "cinematic-section",
+      "type": "registry:block",
+      "title": "Cinematic Section",
+      "description": "Sección narrativa con escala tipográfica y superficie liquid glass."
+    },
+    {
+      "name": "liquid-resource-card",
+      "type": "registry:block",
+      "title": "Liquid Resource Card",
+      "description": "Tarjeta de recurso con glass, CTA y estado hover."
+    },
+    {
       "name": "hero-modern",
       "type": "registry:block",
       "title": "Hero Modern",
-      "description": "Bloque reutilizable de Awesome Modern UI."
+      "description": "Hero moderno con acciones y preview."
     },
     {
       "name": "bento-features",
       "type": "registry:block",
       "title": "Bento Features",
-      "description": "Bloque reutilizable de Awesome Modern UI."
+      "description": "Grid bento accesible para beneficios."
     }
   ]
 }

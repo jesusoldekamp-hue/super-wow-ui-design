@@ -7,7 +7,7 @@
 <h1 align="center">Awesome Modern UI</h1>
 
 <p align="center">
-  Directorio visual y curado para diseñar páginas web, apps y productos digitales modernos.
+  Directorio visual, galería liquid UI y kit de bloques instalables para diseñar páginas web, apps y productos digitales modernos.
 </p>
 
 <p align="center">
@@ -28,21 +28,21 @@
 
 | Curado | Visual | Moderno | Listo para usar |
 | --- | --- | --- | --- |
-| 41 recursos útiles, no una lista infinita. | Portadas SVG locales para navegar desde GitHub. | UI, motion, 3D, SEO, performance y accesibilidad. | Web con liquid glass, filtros, fichas y README generado. |
+| 41 recursos útiles, no una lista infinita. | Portadas SVG locales para navegar desde GitHub. | UI, motion, 3D, SEO, performance y accesibilidad. | Web con liquid glass, registry shadcn, filtros y fichas. |
 
 <p align="center">
-  <code>Next.js 16</code> <code>React 19</code> <code>Tailwind CSS 4</code> <code>Motion</code> <code>shadcn/ui</code> <code>Radix UI</code> <code>Three.js</code> <code>Liquid Glass</code>
+  <code>Next.js 16</code> <code>React 19</code> <code>Tailwind CSS 4</code> <code>Motion</code> <code>shadcn/ui</code> <code>Radix UI</code> <code>Three.js</code> <code>Liquid Glass</code> <code>shadcn registry</code>
 </p>
 
 ## Por qué existe
 
-Este repo no intenta guardar todo. Guarda lo que sí vale la pena tener a mano cuando vas a construir interfaces modernas: herramientas mantenidas, documentadas y con utilidad clara para landings, portfolios, dashboards, SaaS y sitios creativos.
+Este repo no intenta guardar todo. Guarda lo que sí vale la pena tener a mano cuando vas a construir interfaces modernas: herramientas mantenidas, documentación útil, patrones liquid UI y bloques instalables para landings, portfolios, dashboards, SaaS y sitios creativos.
 
 ## Qué lo hace diferente
 
-| Selección estricta | Galería visual | Datos tipados | Calidad continua |
+| Selección estricta | Galería visual | Registry instalable | Calidad continua |
 | --- | --- | --- | --- |
-| Entran recursos con valor real para diseño web y app. | Cada ficha tiene portada local, enlace oficial y una interfaz liquid glass. | El catálogo vive en una sola fuente: `apps/web/lib/catalog.ts`. | CI valida catálogo, registry, lint, tipos, pruebas y build. |
+| Entran recursos con valor real para diseño web y app. | Cada ficha tiene portada local, enlace oficial y una interfaz liquid glass. | Bloques compatibles con shadcn desde `https://awesome-modern-ui.vercel.app/registry.json`. | CI valida catálogo, registry, lint, tipos, pruebas y build. |
 
 ## Explorar por categoría
 
@@ -164,15 +164,33 @@ La web incluye ejemplos completos para ver cómo se combinan estas herramientas:
 - [Experiencia inmersiva](https://awesome-modern-ui.vercel.app/plantillas/cinematic)
 - [Bloques de interfaz](https://awesome-modern-ui.vercel.app/componentes)
 
+## Instalar bloques liquid UI
+
+El registry público está en [`https://awesome-modern-ui.vercel.app/registry.json`](https://awesome-modern-ui.vercel.app/registry.json).
+
+| Bloque | Uso | Instalar |
+| --- | --- | --- |
+| `liquid-hero` | Hero cinematic con liquid glass, profundidad y preview. | `pnpm dlx shadcn@latest add https://awesome-modern-ui.vercel.app/r/liquid-hero.json` |
+| `liquid-bento` | Grid bento con tarjetas liquid y jerarquía editorial. | `pnpm dlx shadcn@latest add https://awesome-modern-ui.vercel.app/r/liquid-bento.json` |
+| `liquid-dashboard-shell` | Shell de dashboard con métricas y actividad. | `pnpm dlx shadcn@latest add https://awesome-modern-ui.vercel.app/r/liquid-dashboard-shell.json` |
+| `cinematic-section` | Sección narrativa para landing, SaaS o portfolio. | `pnpm dlx shadcn@latest add https://awesome-modern-ui.vercel.app/r/cinematic-section.json` |
+| `liquid-resource-card` | Tarjeta de recurso con glass, CTA y hover. | `pnpm dlx shadcn@latest add https://awesome-modern-ui.vercel.app/r/liquid-resource-card.json` |
+
+Ejemplo:
+
+```bash
+pnpm dlx shadcn@latest add https://awesome-modern-ui.vercel.app/r/liquid-hero.json
+```
+
 ## Estructura
 
 ```txt
 apps/web                 Next.js app, galería y documentación
 apps/web/lib/catalog.ts  Fuente tipada del catálogo
 apps/web/public          Portadas SVG y assets públicos
-packages/ui              Componentes compartidos
+packages/ui              Componentes compartidos y bloques liquid UI
 packages/effects         Utilidades de animación y motion safety
-registry.json            Bloques compatibles con shadcn registry
+apps/web/public/r        Bloques compatibles con shadcn registry
 ```
 
 ## Ejecutar la web

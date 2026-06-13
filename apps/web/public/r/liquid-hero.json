@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "liquid-hero",
+  "type": "registry:block",
+  "title": "Liquid Hero",
+  "description": "Hero cinematic con liquid glass, profundidad y preview de producto.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "components/amui/liquid-hero.tsx",
+      "type": "registry:component",
+      "content": "import { ArrowRight, Sparkles } from \"lucide-react\"\nimport type { ReactNode } from \"react\"\n\nimport { Button } from \"@/components/ui/button\"\nimport { LiquidGlass } from \"@/components/ui/liquid-glass\"\nimport { cn } from \"@/lib/utils\"\n\nexport function LiquidHero({\n  title = \"Build interfaces that feel alive.\",\n  description = \"A cinematic hero with layered liquid glass, sharp hierarchy, and a preview surface ready for modern product pages.\",\n  primaryAction,\n  secondaryAction,\n  preview,\n  className,\n}: {\n  title?: string\n  description?: string\n  primaryAction?: ReactNode\n  secondaryAction?: ReactNode\n  preview?: ReactNode\n  className?: string\n}) {\n  return (\n    <section className={cn(\"relative overflow-hidden rounded-[2rem] border bg-background px-6 py-20 text-foreground sm:px-10 lg:px-14\", className)}>\n      <span className=\"pointer-events-none absolute -left-24 top-10 size-72 rounded-full bg-primary/20 blur-3xl\" />\n      <span className=\"pointer-events-none absolute -right-20 bottom-0 size-80 rounded-full bg-cyan-400/15 blur-3xl\" />\n      <div className=\"relative grid items-center gap-12 lg:grid-cols-[0.9fr_1.1fr]\">\n        <div>\n          <h1 className=\"max-w-4xl text-5xl font-semibold leading-[0.92] tracking-[-0.07em] sm:text-7xl\">\n            {title}\n          </h1>\n          <p className=\"mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground\">{description}</p>\n          <div className=\"mt-8 flex flex-wrap gap-3\">\n            <Button asChild size=\"lg\">\n              {primaryAction ?? (\n                <a href=\"#start\">\n                  Start building <ArrowRight data-icon=\"inline-end\" />\n                </a>\n              )}\n            </Button>\n            {secondaryAction ? (\n              <Button asChild variant=\"outline\" size=\"lg\">\n                {secondaryAction}\n              </Button>\n            ) : null}\n          </div>\n        </div>\n        <LiquidGlass className=\"rounded-[1.75rem] p-3\" style={{ \"--glass-x\": \"20%\", \"--glass-y\": \"0%\" }}>\n          {preview ?? (\n            <div className=\"relative min-h-80 overflow-hidden rounded-[1.35rem] border bg-background/55 p-6 shadow-2xl shadow-primary/10 backdrop-blur-xl\">\n              <div className=\"flex items-center justify-between text-xs text-muted-foreground\">\n                <span>liquid-ui.app</span>\n                <Sparkles className=\"size-4 text-primary\" />\n              </div>\n              <div className=\"mt-16 max-w-sm\">\n                <p className=\"text-4xl font-semibold tracking-[-0.06em]\">Liquid system</p>\n                <p className=\"mt-3 text-sm leading-relaxed text-muted-foreground\">\n                  Depth, motion and reusable glass surfaces without hiding the real UI.\n                </p>\n              </div>\n              <div className=\"absolute bottom-6 right-6 grid size-24 place-items-center rounded-3xl border bg-primary/15 text-primary shadow-2xl\">\n                <ArrowRight className=\"size-8\" />\n              </div>\n            </div>\n          )}\n        </LiquidGlass>\n      </div>\n    </section>\n  )\n}\n"
+    },
+    {
+      "path": "components/ui/liquid-glass.tsx",
+      "type": "registry:component",
+      "content": "import type { CSSProperties, ComponentPropsWithoutRef } from \"react\"\n\nimport { cn } from \"@/lib/utils\"\n\ntype LiquidGlassStyle = CSSProperties & {\n  \"--glass-x\"?: string\n  \"--glass-y\"?: string\n}\n\ntype LiquidGlassProps = Omit<ComponentPropsWithoutRef<\"div\">, \"style\"> & {\n  contentClassName?: string\n  style?: LiquidGlassStyle\n}\n\nexport function LiquidGlass({\n  children,\n  className,\n  contentClassName,\n  style,\n  ...props\n}: LiquidGlassProps) {\n  return (\n    <div\n      className={cn(\n        \"liquid-glass relative overflow-hidden border bg-background/45 shadow-2xl shadow-primary/10 backdrop-blur-2xl\",\n        className,\n      )}\n      style={{ \"--glass-x\": \"50%\", \"--glass-y\": \"20%\", ...style } as LiquidGlassStyle}\n      {...props}\n    >\n      <span\n        aria-hidden=\"true\"\n        className=\"liquid-glass__shine pointer-events-none absolute -inset-16 bg-[radial-gradient(circle_at_var(--glass-x)_var(--glass-y),rgba(255,255,255,.32),transparent_34%)] opacity-70 blur-2xl\"\n      />\n      <div className={cn(\"liquid-glass__content relative z-10\", contentClassName)}>{children}</div>\n    </div>\n  )\n}\n"
+    }
+  ]
+}

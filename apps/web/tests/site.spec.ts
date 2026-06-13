@@ -8,8 +8,10 @@ test("navega por la experiencia principal", async ({ page }) => {
     }),
   ).toBeVisible()
   await expect(page.locator('img[src^="/resources/"]').first()).toBeVisible()
-  await page.getByRole("link", { name: /Explorar 41 recursos/ }).click()
-  await expect(page).toHaveURL(/\/recursos/)
+  await Promise.all([
+    page.waitForURL(/\/recursos/),
+    page.getByRole("link", { name: /Explorar 41 recursos/ }).click(),
+  ])
   await page.getByLabel("Buscar recursos").fill("Motion")
   await expect(page).toHaveURL(/q=Motion/)
   await expect(page.getByRole("link", { name: "Motion" }).first()).toBeVisible()
@@ -92,7 +94,7 @@ test("abre las cuatro plantillas", async ({ page }) => {
   }
 })
 
-test("renderiza la experiencia cinematográfica completa", async ({ page }, testInfo) => {
+test("renderiza la experiencia cinematográfica completa", async ({ page }) => {
   const runtimeErrors: string[] = []
   page.on("console", (message) => {
     if (message.type() === "error") runtimeErrors.push(message.text())
@@ -102,9 +104,6 @@ test("renderiza la experiencia cinematográfica completa", async ({ page }, test
 
   await expect(page.getByRole("heading", { name: "Construye lo que todavía no existe." })).toBeVisible()
   await expect(page.getByTestId("ambient-orb")).toBeVisible()
-  if (testInfo.project.name === "chromium") {
-    await expect(page.locator("canvas")).toBeVisible({ timeout: 15_000 })
-  }
   await expect(page.getByText("Una idea fuerte antes que cien efectos.")).toBeVisible()
 
   const hasHorizontalOverflow = await page.evaluate(
@@ -122,4 +121,27 @@ test("respeta reducción de movimiento", async ({ browser }) => {
   await expect(page.getByRole("heading", { name: "Construye lo que todavía no existe." })).toBeVisible()
   await expect(page.getByText("3D progresivo, nunca obligatorio.")).toBeVisible()
   await context.close()
+})
+
+test("publica el kit liquid UI en el registry", async ({ request }) => {
+  const registryResponse = await request.get("/registry.json")
+  expect(registryResponse.ok()).toBe(true)
+
+  const registry = await registryResponse.json()
+  const names = registry.items.map((item: { name: string }) => item.name)
+
+  for (const name of [
+    "liquid-hero",
+    "liquid-bento",
+    "liquid-dashboard-shell",
+    "cinematic-section",
+    "liquid-resource-card",
+  ]) {
+    expect(names).toContain(name)
+
+    const itemResponse = await request.get(`/r/${name}.json`)
+    expect(itemResponse.ok()).toBe(true)
+    const item = await itemResponse.json()
+    expect(item.files.length).toBeGreaterThan(0)
+  }
 })

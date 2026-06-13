@@ -137,6 +137,41 @@ export default function Page() {
 
       <section className="mx-auto max-w-7xl px-5 py-16 lg:px-8">
         <Reveal>
+          <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr]">
+            <div className="flex flex-col justify-center">
+              <Code2 className="size-9 text-primary" />
+              <p className="mt-5 text-sm font-medium text-primary">Kit instalable</p>
+              <h2 className="mt-2 text-3xl font-semibold tracking-[-0.04em] sm:text-5xl">
+                No sólo inspiración. Bloques liquid UI para copiar a tus proyectos.
+              </h2>
+              <p className="mt-4 max-w-xl text-muted-foreground">
+                El registry publica heroes, bentos, dashboard shells, secciones cinematic y resource cards compatibles con shadcn.
+              </p>
+              <Button asChild className="mt-7 self-start">
+                <Link href="/componentes">
+                  Explorar registry <ArrowRight data-icon="inline-end" />
+                </Link>
+              </Button>
+            </div>
+            <LiquidGlass
+              className="rounded-[2rem] p-4"
+              contentClassName="grid gap-3 sm:grid-cols-2"
+              style={{ "--glass-x": "70%", "--glass-y": "0%" }}
+            >
+              {["liquid-hero", "liquid-bento", "liquid-dashboard-shell", "cinematic-section"].map((block) => (
+                <a key={block} href={`/r/${block}.json`} className="liquid-card rounded-2xl p-5">
+                  <p className="font-mono text-xs text-primary">/r/{block}.json</p>
+                  <p className="mt-12 text-xl font-medium tracking-[-0.04em]">{block}</p>
+                  <p className="mt-2 text-sm text-muted-foreground">pnpm dlx shadcn@latest add</p>
+                </a>
+              ))}
+            </LiquidGlass>
+          </div>
+        </Reveal>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-5 py-16 lg:px-8">
+        <Reveal>
           <LiquidGlass
             className="rounded-[2rem] p-7 sm:p-10"
             contentClassName="flex flex-col items-start justify-between gap-7 sm:flex-row sm:items-center"

@@ -36,9 +36,22 @@ const stackHighlights = [
   "Radix UI",
   "Three.js",
   "Liquid Glass",
+  "shadcn registry",
 ]
   .map((item) => `<code>${item}</code>`)
   .join(" ")
+
+const registryBlocks = [
+  ["liquid-hero", "Hero cinematic con liquid glass, profundidad y preview."],
+  ["liquid-bento", "Grid bento con tarjetas liquid y jerarquía editorial."],
+  ["liquid-dashboard-shell", "Shell de dashboard con métricas y actividad."],
+  ["cinematic-section", "Sección narrativa para landing, SaaS o portfolio."],
+  ["liquid-resource-card", "Tarjeta de recurso con glass, CTA y hover."],
+]
+
+const registryRows = registryBlocks
+  .map(([slug, description]) => `| \`${slug}\` | ${description} | \`pnpm dlx shadcn@latest add ${websiteUrl}/r/${slug}.json\` |`)
+  .join("\n")
 
 const tables = categories
   .map((category) => {
@@ -69,7 +82,7 @@ const readme = `<p align="center">
 <h1 align="center">Awesome Modern UI</h1>
 
 <p align="center">
-  Directorio visual y curado para diseñar páginas web, apps y productos digitales modernos.
+  Directorio visual, galería liquid UI y kit de bloques instalables para diseñar páginas web, apps y productos digitales modernos.
 </p>
 
 <p align="center">
@@ -90,7 +103,7 @@ const readme = `<p align="center">
 
 | Curado | Visual | Moderno | Listo para usar |
 | --- | --- | --- | --- |
-| ${resources.length} recursos útiles, no una lista infinita. | Portadas SVG locales para navegar desde GitHub. | UI, motion, 3D, SEO, performance y accesibilidad. | Web con liquid glass, filtros, fichas y README generado. |
+| ${resources.length} recursos útiles, no una lista infinita. | Portadas SVG locales para navegar desde GitHub. | UI, motion, 3D, SEO, performance y accesibilidad. | Web con liquid glass, registry shadcn, filtros y fichas. |
 
 <p align="center">
   ${stackHighlights}
@@ -98,13 +111,13 @@ const readme = `<p align="center">
 
 ## Por qué existe
 
-Este repo no intenta guardar todo. Guarda lo que sí vale la pena tener a mano cuando vas a construir interfaces modernas: herramientas mantenidas, documentadas y con utilidad clara para landings, portfolios, dashboards, SaaS y sitios creativos.
+Este repo no intenta guardar todo. Guarda lo que sí vale la pena tener a mano cuando vas a construir interfaces modernas: herramientas mantenidas, documentación útil, patrones liquid UI y bloques instalables para landings, portfolios, dashboards, SaaS y sitios creativos.
 
 ## Qué lo hace diferente
 
-| Selección estricta | Galería visual | Datos tipados | Calidad continua |
+| Selección estricta | Galería visual | Registry instalable | Calidad continua |
 | --- | --- | --- | --- |
-| Entran recursos con valor real para diseño web y app. | Cada ficha tiene portada local, enlace oficial y una interfaz liquid glass. | El catálogo vive en una sola fuente: \`apps/web/lib/catalog.ts\`. | CI valida catálogo, registry, lint, tipos, pruebas y build. |
+| Entran recursos con valor real para diseño web y app. | Cada ficha tiene portada local, enlace oficial y una interfaz liquid glass. | Bloques compatibles con shadcn desde \`${websiteUrl}/registry.json\`. | CI valida catálogo, registry, lint, tipos, pruebas y build. |
 
 ## Explorar por categoría
 
@@ -128,15 +141,29 @@ La web incluye ejemplos completos para ver cómo se combinan estas herramientas:
 - [Experiencia inmersiva](${websiteUrl}/plantillas/cinematic)
 - [Bloques de interfaz](${websiteUrl}/componentes)
 
+## Instalar bloques liquid UI
+
+El registry público está en [\`${websiteUrl}/registry.json\`](${websiteUrl}/registry.json).
+
+| Bloque | Uso | Instalar |
+| --- | --- | --- |
+${registryRows}
+
+Ejemplo:
+
+\`\`\`bash
+pnpm dlx shadcn@latest add ${websiteUrl}/r/liquid-hero.json
+\`\`\`
+
 ## Estructura
 
 \`\`\`txt
 apps/web                 Next.js app, galería y documentación
 apps/web/lib/catalog.ts  Fuente tipada del catálogo
 apps/web/public          Portadas SVG y assets públicos
-packages/ui              Componentes compartidos
+packages/ui              Componentes compartidos y bloques liquid UI
 packages/effects         Utilidades de animación y motion safety
-registry.json            Bloques compatibles con shadcn registry
+apps/web/public/r        Bloques compatibles con shadcn registry
 \`\`\`
 
 ## Ejecutar la web

@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "cinematic-section",
+  "type": "registry:block",
+  "title": "Cinematic Section",
+  "description": "Sección narrativa con escala tipográfica y superficie liquid glass.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "components/amui/cinematic-section.tsx",
+      "type": "registry:component",
+      "content": "import { ArrowRight, Sparkles } from \"lucide-react\"\nimport type { ReactNode } from \"react\"\n\nimport { LiquidGlass } from \"@/components/ui/liquid-glass\"\nimport { cn } from \"@/lib/utils\"\n\nexport function CinematicSection({\n  title = \"Make every section feel intentional.\",\n  description = \"Use scale, rhythm, liquid surfaces and one strong visual idea to turn a normal content band into a cinematic product moment.\",\n  children,\n  className,\n}: {\n  title?: string\n  description?: string\n  children?: ReactNode\n  className?: string\n}) {\n  return (\n    <section className={cn(\"relative overflow-hidden rounded-[2rem] border bg-background px-6 py-20 sm:px-10\", className)}>\n      <span className=\"pointer-events-none absolute -right-24 top-0 size-80 rounded-full bg-primary/15 blur-3xl\" />\n      <div className=\"relative grid gap-10 lg:grid-cols-[0.8fr_1.2fr]\">\n        <div>\n          <Sparkles className=\"size-8 text-primary\" />\n          <h2 className=\"mt-8 max-w-3xl text-5xl font-semibold leading-[0.95] tracking-[-0.06em] sm:text-7xl\">\n            {title}\n          </h2>\n          <p className=\"mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground\">{description}</p>\n        </div>\n        <LiquidGlass className=\"min-h-96 rounded-[1.75rem] p-5\" style={{ \"--glass-x\": \"74%\", \"--glass-y\": \"0%\" }}>\n          {children ?? (\n            <div className=\"flex h-full min-h-80 flex-col justify-between rounded-[1.25rem] border bg-background/40 p-6\">\n              <p className=\"text-sm text-muted-foreground\">Cinematic system</p>\n              <div>\n                <p className=\"text-4xl font-medium tracking-[-0.05em]\">Liquid UI block</p>\n                <p className=\"mt-3 text-sm text-muted-foreground\">Drop it into a landing, dashboard, portfolio or SaaS page.</p>\n              </div>\n              <span className=\"inline-flex items-center gap-2 text-sm text-primary\">\n                Explore pattern <ArrowRight className=\"size-4\" />\n              </span>\n            </div>\n          )}\n        </LiquidGlass>\n      </div>\n    </section>\n  )\n}\n"
+    },
+    {
+      "path": "components/ui/liquid-glass.tsx",
+      "type": "registry:component",
+      "content": "import type { CSSProperties, ComponentPropsWithoutRef } from \"react\"\n\nimport { cn } from \"@/lib/utils\"\n\ntype LiquidGlassStyle = CSSProperties & {\n  \"--glass-x\"?: string\n  \"--glass-y\"?: string\n}\n\ntype LiquidGlassProps = Omit<ComponentPropsWithoutRef<\"div\">, \"style\"> & {\n  contentClassName?: string\n  style?: LiquidGlassStyle\n}\n\nexport function LiquidGlass({\n  children,\n  className,\n  contentClassName,\n  style,\n  ...props\n}: LiquidGlassProps) {\n  return (\n    <div\n      className={cn(\n        \"liquid-glass relative overflow-hidden border bg-background/45 shadow-2xl shadow-primary/10 backdrop-blur-2xl\",\n        className,\n      )}\n      style={{ \"--glass-x\": \"50%\", \"--glass-y\": \"20%\", ...style } as LiquidGlassStyle}\n      {...props}\n    >\n      <span\n        aria-hidden=\"true\"\n        className=\"liquid-glass__shine pointer-events-none absolute -inset-16 bg-[radial-gradient(circle_at_var(--glass-x)_var(--glass-y),rgba(255,255,255,.32),transparent_34%)] opacity-70 blur-2xl\"\n      />\n      <div className={cn(\"liquid-glass__content relative z-10\", contentClassName)}>{children}</div>\n    </div>\n  )\n}\n"
+    }
+  ]
+}
