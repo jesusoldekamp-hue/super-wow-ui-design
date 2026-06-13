@@ -227,12 +227,6 @@ Abre un issue o pull request en [https://github.com/jesusoldekamp-hue/awesome-mo
 
 No se aceptan recursos abandonados, duplicados o premium sin valor claro para construir mejores interfaces.
 
-## Créditos
-
-Proyecto original de [Jesus Sagaon](https://github.com/jesusoldekamp-hue).
-Inspirado por la recopilación pública
-[AndersonMoncayo/awesome-modern-ui](https://github.com/AndersonMoncayo/awesome-modern-ui).
-
 ## Licencia
 
 Código propio bajo [MIT](./LICENSE). Los recursos enlazados conservan las
