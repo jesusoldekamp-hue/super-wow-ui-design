@@ -99,8 +99,8 @@ await writeFile(
   resolve(process.cwd(), "public/registry.json"),
   `${JSON.stringify({
     $schema: "https://ui.shadcn.com/schema/registry.json",
-    name: "awesome-modern-ui",
-    homepage: "https://awesome-modern-ui.vercel.app",
+    name: "super-wow-ui-design",
+    homepage: "https://super-wow-ui-design.vercel.app",
     items: items.map((item) => ({
       name: item.name,
       type: "registry:block",

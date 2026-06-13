@@ -143,9 +143,9 @@ await Promise.all(
 const docsImageDirectory = resolve(process.cwd(), "../../docs/images")
 await mkdir(docsImageDirectory, { recursive: true })
 await writeFile(
-  resolve(docsImageDirectory, "awesome-modern-ui-cover.svg"),
+  resolve(docsImageDirectory, "super-wow-ui-design-cover.svg"),
   `<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title description">
-  <title id="title">Awesome Modern UI</title>
+  <title id="title">Super Wow UI Design</title>
   <desc id="description">Directorio visual de recursos para diseñar páginas web y aplicaciones modernas.</desc>
   <defs>
     <linearGradient id="bg" x1="120" y1="40" x2="1480" y2="860" gradientUnits="userSpaceOnUse">

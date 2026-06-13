@@ -400,8 +400,8 @@ export function PortfolioCinematicDemo() {
           <h2 className="mx-auto mt-8 max-w-5xl text-5xl font-medium tracking-[-0.06em] sm:text-8xl">
             El próximo proyecto puede cambiar la conversación.
           </h2>
-          <ViewTransitionLink href="mailto:hola@example.com" className="mt-10 inline-flex h-12 items-center gap-2 rounded-full bg-white px-6 text-sm font-medium text-black">
-            Empezar una conversación <ArrowUpRight className="size-4" />
+          <ViewTransitionLink href="https://github.com/jesusoldekamp-hue/super-wow-ui-design" className="mt-10 inline-flex h-12 items-center gap-2 rounded-full bg-white px-6 text-sm font-medium text-black">
+            Ver el repositorio <ArrowUpRight className="size-4" />
           </ViewTransitionLink>
         </section>
       </div>

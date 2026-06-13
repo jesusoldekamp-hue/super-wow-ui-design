@@ -19,15 +19,15 @@ const fontMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://awesome-modern-ui.vercel.app"),
+  metadataBase: new URL("https://super-wow-ui-design.vercel.app"),
   title: {
-    default: "Awesome Modern UI",
-    template: "%s | Awesome Modern UI",
+    default: "Super Wow UI Design",
+    template: "%s | Super Wow UI Design",
   },
   description:
     "Directorio visual de recursos para diseñar páginas web y aplicaciones modernas.",
   openGraph: {
-    title: "Awesome Modern UI",
+    title: "Super Wow UI Design",
     description:
       "Herramientas, componentes, animación e inspiración para diseño web y apps.",
     type: "website",

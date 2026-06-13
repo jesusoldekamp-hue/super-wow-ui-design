@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next"
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Awesome Modern UI",
+    name: "Super Wow UI Design",
     short_name: "AMUI",
     description: "Recursos visuales para diseñar páginas web y aplicaciones modernas.",
     start_url: "/",

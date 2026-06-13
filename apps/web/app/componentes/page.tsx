@@ -75,7 +75,7 @@ export default function ComponentsPage() {
                 <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{description}</p>
               </div>
               <div className="mt-8 rounded-2xl border bg-background/45 p-3 font-mono text-[11px] text-muted-foreground">
-                pnpm dlx shadcn@latest add https://awesome-modern-ui.vercel.app/r/{slug}.json
+                pnpm dlx shadcn@latest add https://super-wow-ui-design.vercel.app/r/{slug}.json
               </div>
               <Button asChild className="mt-5">
                 <a href={`/r/${slug}.json`}>Ver JSON <ArrowRight data-icon="inline-end" /></a>

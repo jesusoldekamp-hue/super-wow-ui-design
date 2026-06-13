@@ -4,7 +4,7 @@ import { resources } from "@/lib/catalog"
 import { guides } from "@/lib/guides"
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = "https://awesome-modern-ui.vercel.app"
+  const base = "https://super-wow-ui-design.vercel.app"
   const routes = ["", "/componentes", "/plantillas", "/recursos", "/guias"]
 
   return [

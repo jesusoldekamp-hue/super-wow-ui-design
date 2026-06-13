@@ -1,6 +1,6 @@
 # Web Quality Skills
 
-Awesome Modern UI incluye seis Agent Skills de
+Super Wow UI Design incluye seis Agent Skills de
 [Addy Osmani](https://github.com/addyosmani/web-quality-skills) bajo licencia
 MIT. Están fijadas al commit
 `7b59d48aaf1f793935002f4998dfccc656f40839`.

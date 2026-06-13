@@ -14,7 +14,7 @@ const skills = [
 
 async function fetchText(url) {
   const response = await fetch(url, {
-    headers: { "User-Agent": "awesome-modern-ui-skill-sync" },
+    headers: { "User-Agent": "super-wow-ui-design-skill-sync" },
   })
 
   if (!response.ok) {
@@ -26,7 +26,7 @@ async function fetchText(url) {
 
 const commitResponse = await fetch(
   `https://api.github.com/repos/${repository}/commits/${requestedRef}`,
-  { headers: { "User-Agent": "awesome-modern-ui-skill-sync" } },
+  { headers: { "User-Agent": "super-wow-ui-design-skill-sync" } },
 )
 
 if (!commitResponse.ok) {
@@ -37,7 +37,7 @@ const { sha } = await commitResponse.json()
 const rawBase = `https://raw.githubusercontent.com/${repository}/${sha}`
 const treeResponse = await fetch(
   `https://api.github.com/repos/${repository}/git/trees/${sha}?recursive=1`,
-  { headers: { "User-Agent": "awesome-modern-ui-skill-sync" } },
+  { headers: { "User-Agent": "super-wow-ui-design-skill-sync" } },
 )
 
 if (!treeResponse.ok) {

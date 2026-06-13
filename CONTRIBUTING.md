@@ -1,4 +1,4 @@
-# Contribuir a Awesome Modern UI
+# Contribuir a Super Wow UI Design
 
 Buscamos calidad, no volumen. Un recurso debe estar mantenido, aportar una capacidad diferenciada y tener documentación, licencia y precio claros.
 

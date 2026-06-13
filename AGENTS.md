@@ -4,7 +4,7 @@
 This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` before writing any code. Heed deprecation notices.
 <!-- END:nextjs-agent-rules -->
 
-# Awesome Modern UI Agent Contract
+# Super Wow UI Design Agent Contract
 
 Este repositorio es una base operativa para que Codex, Claude Code y otros agentes construyan sitios de producto con alta dirección visual. No es solo una lista de enlaces.
 

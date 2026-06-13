@@ -1,5 +1,5 @@
 {
-  "name": "awesome-modern-ui",
+  "name": "super-wow-ui-design",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -28,6 +28,12 @@
     "prettier-plugin-tailwindcss": "^0.8.0",
     "turbo": "^2.9.15",
     "typescript": "^5"
+  },
+  "pnpm": {
+    "overrides": {
+      "esbuild": "^0.28.1",
+      "postcss": "^8.5.10"
+    }
   },
   "packageManager": "pnpm@10.33.4",
   "engines": {

@@ -1,4 +1,4 @@
-# Awesome Modern UI para Claude Code
+# Super Wow UI Design para Claude Code
 
 Lee y sigue primero `AGENTS.md`. Después consulta:
 

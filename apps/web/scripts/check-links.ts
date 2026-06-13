@@ -35,7 +35,7 @@ async function checkLink(target: LinkTarget): Promise<LinkResult> {
       headers: {
         accept: "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
         "user-agent":
-          "AwesomeModernUI-LinkChecker/1.0 (+https://github.com/jesusoldekamp-hue/awesome-modern-ui)",
+          "SuperWowUIDesign-LinkChecker/1.0 (+https://github.com/jesusoldekamp-hue/super-wow-ui-design)",
       },
     })
 

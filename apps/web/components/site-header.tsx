@@ -27,9 +27,9 @@ export function SiteHeader() {
         <SiteNavOutline />
         <Link href="/" className="flex items-center gap-3 font-semibold">
           <span className="grid size-9 place-items-center rounded-xl border border-white/15 bg-gradient-to-br from-blue-500 via-violet-500 to-cyan-400 text-sm text-white shadow-lg shadow-violet-500/25">
-            A
+            S
           </span>
-          <span className="tracking-[-0.02em]">Awesome Modern UI</span>
+          <span className="tracking-[-0.02em]">Super Wow UI Design</span>
         </Link>
         <nav className="hidden items-center gap-7 text-sm text-muted-foreground md:flex">
           {links.map(([label, href]) => (
@@ -40,7 +40,7 @@ export function SiteHeader() {
         </nav>
         <div className="flex items-center gap-2">
           <Button asChild variant="outline" className="hidden sm:inline-flex">
-            <a href="https://github.com/jesusoldekamp-hue/awesome-modern-ui">
+            <a href="https://github.com/jesusoldekamp-hue/super-wow-ui-design">
               <Code2 data-icon="inline-start" />
               GitHub
             </a>
@@ -55,7 +55,7 @@ export function SiteHeader() {
             <SheetContent>
               <SheetTitle>Navegación</SheetTitle>
               <SheetDescription className="sr-only">
-                Enlaces principales de Awesome Modern UI.
+                Enlaces principales de Super Wow UI Design.
               </SheetDescription>
               <nav className="flex flex-col gap-2 px-4">
                 {links.map(([label, href]) => (

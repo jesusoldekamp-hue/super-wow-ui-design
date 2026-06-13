@@ -31,6 +31,11 @@ export default function Page() {
               Una colección visual y curada de componentes, animación, 3D, rendimiento e
               inspiración para crear páginas web y productos digitales con estética actual.
             </p>
+            <p className="mt-4 max-w-xl text-sm leading-relaxed text-muted-foreground">
+              Comparte esta página o el GitHub con Codex, Claude u otra IA para darle un
+              contexto curado de recursos, patrones liquid UI y bloques listos para crear
+              interfaces premium.
+            </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Button asChild size="lg">
                 <Link href="/recursos">
@@ -174,6 +179,36 @@ export default function Page() {
         <Reveal>
           <LiquidGlass
             className="rounded-[2rem] p-7 sm:p-10"
+            contentClassName="grid gap-8 lg:grid-cols-[0.85fr_1.15fr]"
+            style={{ "--glass-x": "82%", "--glass-y": "12%" }}
+          >
+            <div>
+              <p className="text-sm font-medium text-primary">Contexto para IA</p>
+              <h2 className="mt-2 text-3xl font-semibold tracking-[-0.04em] sm:text-5xl">
+                Dale a tu asistente una referencia clara de diseño moderno.
+              </h2>
+              <p className="mt-4 max-w-xl text-muted-foreground">
+                El repo y la web funcionan como una base de contexto para Codex, Claude o
+                cualquier IA de desarrollo: stack recomendado, recursos curados, criterios
+                de calidad, patrones cinematic y bloques liquid UI instalables.
+              </p>
+            </div>
+            <div className="liquid-card rounded-3xl p-5 font-mono text-xs leading-relaxed text-muted-foreground">
+              <p className="text-primary">Prompt sugerido</p>
+              <p className="mt-4">
+                Usa super-wow-ui-design como referencia de diseño para construir una
+                interfaz con liquid UI, accesibilidad, performance, motion safety y
+                componentes modernos.
+              </p>
+            </div>
+          </LiquidGlass>
+        </Reveal>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-5 py-16 lg:px-8">
+        <Reveal>
+          <LiquidGlass
+            className="rounded-[2rem] p-7 sm:p-10"
             contentClassName="flex flex-col items-start justify-between gap-7 sm:flex-row sm:items-center"
             style={{ "--glass-x": "8%", "--glass-y": "0%" }}
           >
@@ -188,7 +223,7 @@ export default function Page() {
               </p>
             </div>
             <Button asChild variant="outline" size="lg">
-              <a href="https://github.com/jesusoldekamp-hue/awesome-modern-ui">
+              <a href="https://github.com/jesusoldekamp-hue/super-wow-ui-design">
                 <Code2 data-icon="inline-start" />
                 Abrir GitHub
               </a>

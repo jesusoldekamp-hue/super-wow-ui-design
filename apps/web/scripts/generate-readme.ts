@@ -3,8 +3,8 @@ import { resolve } from "node:path"
 
 import { categories, categoryLabels, resources } from "../lib/catalog"
 
-const repositoryUrl = "https://github.com/jesusoldekamp-hue/awesome-modern-ui"
-const websiteUrl = "https://awesome-modern-ui.vercel.app"
+const repositoryUrl = "https://github.com/jesusoldekamp-hue/super-wow-ui-design"
+const websiteUrl = "https://super-wow-ui-design.vercel.app"
 
 const categoryIndex = categories
   .map((category) => {
@@ -75,14 +75,15 @@ ${rows}`
 
 const readme = `<p align="center">
   <a href="${websiteUrl}">
-    <img src="./docs/images/awesome-modern-ui-cover.svg" alt="Awesome Modern UI: recursos para diseñar webs y apps modernas" width="100%">
+    <img src="./docs/images/super-wow-ui-design-cover.svg" alt="Super Wow UI Design: recursos para diseñar webs y apps modernas" width="100%">
   </a>
 </p>
 
-<h1 align="center">Awesome Modern UI</h1>
+<h1 align="center">Super Wow UI Design</h1>
 
 <p align="center">
   Directorio visual, galería liquid UI y kit de bloques instalables para diseñar páginas web, apps y productos digitales modernos.
+  Comparte este GitHub o la web con Codex, Claude u otra IA para darle una fuente de contexto lista para crear interfaces premium.
 </p>
 
 <p align="center">
@@ -112,6 +113,17 @@ const readme = `<p align="center">
 ## Por qué existe
 
 Este repo no intenta guardar todo. Guarda lo que sí vale la pena tener a mano cuando vas a construir interfaces modernas: herramientas mantenidas, documentación útil, patrones liquid UI y bloques instalables para landings, portfolios, dashboards, SaaS y sitios creativos.
+
+## Contexto para IA
+
+La función principal es simple: compartir la página o el GitHub y darle a cualquier asistente de código una base curada para diseñar mejor. Aquí encuentra stack recomendado, recursos modernos, criterios de calidad, patrones cinematic/liquid UI y comandos del registry para instalar bloques directamente en un proyecto.
+
+Úsalo como prompt de contexto:
+
+\`\`\`txt
+Usa https://super-wow-ui-design.vercel.app y https://github.com/jesusoldekamp-hue/super-wow-ui-design como referencia de diseño.
+Construye la interfaz con estética liquid UI, buenas prácticas de accesibilidad, performance, motion safety y componentes modernos.
+\`\`\`
 
 ## Qué lo hace diferente
 
@@ -199,12 +211,6 @@ Abre un issue o pull request en [${repositoryUrl}](${repositoryUrl}). Para que u
 - categoría adecuada y alternativas que reemplazaría.
 
 No se aceptan recursos abandonados, duplicados o premium sin valor claro para construir mejores interfaces.
-
-## Créditos
-
-Proyecto original de [Jesus Sagaon](https://github.com/jesusoldekamp-hue).
-Inspirado por la recopilación pública
-[AndersonMoncayo/awesome-modern-ui](https://github.com/AndersonMoncayo/awesome-modern-ui).
 
 ## Licencia
 
