@@ -19,7 +19,7 @@
 </p>
 
 <p align="center">
-  <img alt="41 recursos" src="https://img.shields.io/badge/41_recursos-curados-6d5dfc?style=flat-square">
+  <img alt="44 recursos" src="https://img.shields.io/badge/44_recursos-curados-6d5dfc?style=flat-square">
   <img alt="8 categorías" src="https://img.shields.io/badge/8_categorias-visuales-22d3ee?style=flat-square">
   <img alt="Next.js" src="https://img.shields.io/badge/Next.js-16-black?style=flat-square&logo=nextdotjs">
   <img alt="Licencia MIT" src="https://img.shields.io/badge/licencia-MIT-34d399?style=flat-square">
@@ -29,7 +29,7 @@
 
 | Curado | Visual | Moderno | Listo para usar |
 | --- | --- | --- | --- |
-| 41 recursos útiles, no una lista infinita. | Portadas SVG locales para navegar desde GitHub. | UI, motion, 3D, SEO, performance y accesibilidad. | Web con liquid glass, registry shadcn, filtros y fichas. |
+| 44 recursos útiles, no una lista infinita. | Portadas SVG locales para navegar desde GitHub. | UI, motion, 3D, SEO, performance y accesibilidad. | Web con liquid glass, registry shadcn, filtros y fichas. |
 
 <p align="center">
   <code>Next.js 16</code> <code>React 19</code> <code>Tailwind CSS 4</code> <code>Motion</code> <code>shadcn/ui</code> <code>Radix UI</code> <code>Three.js</code> <code>Liquid Glass</code> <code>shadcn registry</code>
@@ -58,7 +58,7 @@ Construye la interfaz con estética liquid UI, buenas prácticas de accesibilida
 
 ## Explorar por categoría
 
-<a href="#stack"><img alt="Stack moderno" src="https://img.shields.io/badge/Stack%20moderno-5-111827?style=for-the-badge&labelColor=060913&color=6d5dfc"></a> <a href="#componentes"><img alt="Componentes y UI" src="https://img.shields.io/badge/Componentes%20y%20UI-6-111827?style=for-the-badge&labelColor=060913&color=6d5dfc"></a> <a href="#animacion"><img alt="Animación" src="https://img.shields.io/badge/Animaci%C3%B3n-10-111827?style=for-the-badge&labelColor=060913&color=6d5dfc"></a> <a href="#3d"><img alt="3D" src="https://img.shields.io/badge/3D-3-111827?style=for-the-badge&labelColor=060913&color=6d5dfc"></a> <a href="#rendimiento"><img alt="Rendimiento" src="https://img.shields.io/badge/Rendimiento-5-111827?style=for-the-badge&labelColor=060913&color=6d5dfc"></a> <a href="#accesibilidad"><img alt="Accesibilidad" src="https://img.shields.io/badge/Accesibilidad-3-111827?style=for-the-badge&labelColor=060913&color=6d5dfc"></a> <a href="#seo-analitica"><img alt="SEO y analítica" src="https://img.shields.io/badge/SEO%20y%20anal%C3%ADtica-3-111827?style=for-the-badge&labelColor=060913&color=6d5dfc"></a> <a href="#patrones"><img alt="Patrones e inspiración" src="https://img.shields.io/badge/Patrones%20e%20inspiraci%C3%B3n-6-111827?style=for-the-badge&labelColor=060913&color=6d5dfc"></a>
+<a href="#stack"><img alt="Stack moderno" src="https://img.shields.io/badge/Stack%20moderno-5-111827?style=for-the-badge&labelColor=060913&color=6d5dfc"></a> <a href="#componentes"><img alt="Componentes y UI" src="https://img.shields.io/badge/Componentes%20y%20UI-6-111827?style=for-the-badge&labelColor=060913&color=6d5dfc"></a> <a href="#animacion"><img alt="Animación" src="https://img.shields.io/badge/Animaci%C3%B3n-10-111827?style=for-the-badge&labelColor=060913&color=6d5dfc"></a> <a href="#3d"><img alt="3D" src="https://img.shields.io/badge/3D-3-111827?style=for-the-badge&labelColor=060913&color=6d5dfc"></a> <a href="#rendimiento"><img alt="Rendimiento" src="https://img.shields.io/badge/Rendimiento-6-111827?style=for-the-badge&labelColor=060913&color=6d5dfc"></a> <a href="#accesibilidad"><img alt="Accesibilidad" src="https://img.shields.io/badge/Accesibilidad-3-111827?style=for-the-badge&labelColor=060913&color=6d5dfc"></a> <a href="#seo-analitica"><img alt="SEO y analítica" src="https://img.shields.io/badge/SEO%20y%20anal%C3%ADtica-3-111827?style=for-the-badge&labelColor=060913&color=6d5dfc"></a> <a href="#patrones"><img alt="Patrones e inspiración" src="https://img.shields.io/badge/Patrones%20e%20inspiraci%C3%B3n-8-111827?style=for-the-badge&labelColor=060913&color=6d5dfc"></a>
 
 ## Recursos destacados
 
@@ -132,6 +132,7 @@ Construye la interfaz con estética liquid UI, buenas prácticas de accesibilida
 | <a href="https://super-wow-ui-design.vercel.app/recursos/vercel"><img src="./apps/web/public/resources/vercel.svg" alt="Vista visual de Vercel, recurso para diseño y desarrollo web." width="180"></a> | **[Vercel](https://vercel.com)**<br>Plataforma de despliegue optimizada para frontend.<br><sub>Propietaria · freemium</sub> |
 | <a href="https://super-wow-ui-design.vercel.app/recursos/core-web-vitals"><img src="./apps/web/public/resources/core-web-vitals.svg" alt="Vista visual de Core Web Vitals, recurso para diseño y desarrollo web." width="180"></a> | **[Core Web Vitals](https://web.dev/vitals)**<br>Métricas de experiencia real: LCP, INP y CLS.<br><sub>Estándar web · gratis</sub> |
 | <a href="https://super-wow-ui-design.vercel.app/recursos/web-quality-skills"><img src="./apps/web/public/resources/web-quality-skills.svg" alt="Vista visual de Web Quality Skills, recurso para diseño y desarrollo web." width="180"></a> | **[Web Quality Skills](https://github.com/addyosmani/web-quality-skills)**<br>Reglas reutilizables para Lighthouse, Core Web Vitals, WCAG 2.2 y SEO.<br><sub>MIT · gratis</sub> |
+| <a href="https://super-wow-ui-design.vercel.app/recursos/playwright-mcp"><img src="./apps/web/public/resources/playwright-mcp.svg" alt="Vista visual de Playwright MCP, recurso para diseño y desarrollo web." width="180"></a> | **[Playwright MCP](https://github.com/microsoft/playwright-mcp)**<br>Servidor MCP oficial para automatizar navegador con Playwright.<br><sub>Apache-2.0 · gratis</sub> |
 
 <a id="accesibilidad"></a>
 
@@ -165,6 +166,8 @@ Construye la interfaz con estética liquid UI, buenas prácticas de accesibilida
 | <a href="https://super-wow-ui-design.vercel.app/recursos/bento-grid"><img src="./apps/web/public/resources/bento-grid.svg" alt="Vista visual de Bento Grid, recurso para diseño y desarrollo web." width="180"></a> | **[Bento Grid](https://bentogrids.com)**<br>Composición modular con jerarquía variable.<br><sub>Patrón de diseño · gratis</sub> |
 | <a href="https://super-wow-ui-design.vercel.app/recursos/mobbin"><img src="./apps/web/public/resources/mobbin.svg" alt="Vista visual de Mobbin, recurso para diseño y desarrollo web." width="180"></a> | **[Mobbin](https://mobbin.com)**<br>Biblioteca de flujos reales de productos digitales.<br><sub>Propietaria · freemium</sub> |
 | <a href="https://super-wow-ui-design.vercel.app/recursos/godly"><img src="./apps/web/public/resources/godly.svg" alt="Vista visual de Godly, recurso para diseño y desarrollo web." width="180"></a> | **[Godly](https://godly.website)**<br>Curaduría de sitios con dirección visual actual.<br><sub>Propietaria · gratis</sub> |
+| <a href="https://super-wow-ui-design.vercel.app/recursos/typeui"><img src="./apps/web/public/resources/typeui.svg" alt="Vista visual de TypeUI, recurso para diseño y desarrollo web." width="180"></a> | **[TypeUI](https://github.com/bergside/typeui)**<br>Genera especificaciones de sistema visual y skills para asistentes de código.<br><sub>MIT · gratis</sub> |
+| <a href="https://super-wow-ui-design.vercel.app/recursos/design-md-chrome"><img src="./apps/web/public/resources/design-md-chrome.svg" alt="Vista visual de Design MD Chrome, recurso para diseño y desarrollo web." width="180"></a> | **[Design MD Chrome](https://github.com/bergside/design-md-chrome)**<br>Extensión Chrome para extraer estilos de webs y generar DESIGN.md.<br><sub>MIT · gratis</sub> |
 
 ## Diseños y componentes
 

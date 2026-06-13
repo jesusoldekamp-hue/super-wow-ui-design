@@ -34,7 +34,7 @@
   </text>
   <g transform="translate(120 620)">
     <rect width="220" height="58" rx="29" fill="url(#accent)"/>
-    <text x="110" y="37" text-anchor="middle" fill="white" font-family="Inter, Arial, sans-serif" font-size="19" font-weight="750">41 RECURSOS</text>
+    <text x="110" y="37" text-anchor="middle" fill="white" font-family="Inter, Arial, sans-serif" font-size="19" font-weight="750">44 RECURSOS</text>
     <rect x="240" width="240" height="58" rx="29" fill="#fff" fill-opacity=".06" stroke="#fff" stroke-opacity=".16"/>
     <text x="360" y="37" text-anchor="middle" fill="#E9ECF8" font-family="Inter, Arial, sans-serif" font-size="19" font-weight="650">8 CATEGORÍAS</text>
   </g>

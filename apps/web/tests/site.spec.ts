@@ -10,7 +10,7 @@ test("navega por la experiencia principal", async ({ page }) => {
   await expect(page.locator('img[src^="/resources/"]').first()).toBeVisible()
   await Promise.all([
     page.waitForURL(/\/recursos/),
-    page.getByRole("link", { name: /Explorar 41 recursos/ }).click(),
+    page.getByRole("link", { name: /Explorar \d+ recursos/ }).click(),
   ])
   await page.getByLabel("Buscar recursos").fill("Motion")
   await expect(page).toHaveURL(/q=Motion/)
